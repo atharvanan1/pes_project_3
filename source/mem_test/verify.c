@@ -7,7 +7,6 @@
   * URL				-
   */
 #include "verify.h"
-
 uint32_t * verify_pattern(uint32_t * loc, size_t length, int8_t seed)
 {
 	uint8_t* temp = (uint8_t*) loc;
@@ -23,7 +22,7 @@ uint32_t * verify_pattern(uint32_t * loc, size_t length, int8_t seed)
 		}
 		else if (*(temp + i) != pattern_holder[i])
 		{
-			*(buffer_address + j) = (uint32_t) (temp + i);
+			*(buffer_address + j) = (uint64_t) (temp + i);
 			j++;
 		}
 	}

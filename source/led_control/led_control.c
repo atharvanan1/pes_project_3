@@ -8,9 +8,11 @@
 void Turn_On_Only_LED(uint8_t LED)
 {
 	char* LED_string = NULL;
+#if defined(KL25Z) || defined(KL25Z_LOG)
 	LED_RED_INIT(LOGIC_LED_OFF);
 	LED_BLUE_INIT(LOGIC_LED_OFF);
 	LED_GREEN_INIT(LOGIC_LED_OFF);
+#endif
 	if(LED == RED)
 	{
 		LED_string = "RED";
