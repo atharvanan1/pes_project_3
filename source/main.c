@@ -13,11 +13,11 @@ logger logger_1 = {
 		0,
 };
 logger* logger_instance = &logger_1;
-uint32_t buffer_address[16];
+ARCH_SIZE buffer_address[16];
 uint8_t length = 0;
 
 // Function declarations
-uint8_t get_length(uint32_t* address, uint8_t length_of_array);
+uint8_t get_length(ARCH_SIZE* address, uint8_t length_of_array);
 void delay(void);
 #if defined(KL25Z) || defined(KL25Z_LOG)
 void init(void);
@@ -40,9 +40,9 @@ int main(void)
 #endif
 
 	uint32_t* base = NULL;
-	uint32_t* address = NULL;
+	ARCH_SIZE* address = NULL;
 	size_t length = 16;
-	int8_t seed = -45;
+	int8_t seed = 74;
 	uint8_t test_status = SUCCESS;
 	volatile uint8_t status;
 
@@ -56,7 +56,7 @@ int main(void)
 	if(status == SUCCESS)
 	{
 		// Display the pattern
-		logger_instance->data = (uint32_t*) display_memory(base, 16);
+		logger_instance->data = (ARCH_SIZE*) display_memory(base, 16);
 		logger_instance->length = 16;
 		log_data();
 	}
@@ -91,7 +91,7 @@ int main(void)
 	log_string();
 
 	// Display the pattern
-	logger_instance->data = (uint32_t*) display_memory(get_address(base, 7), 2);
+	logger_instance->data = (ARCH_SIZE*) display_memory(get_address(base, 7), 2);
 	logger_instance->length = 2;
 	log_data();
 
@@ -101,7 +101,7 @@ int main(void)
 	{
 		logger_instance->string = "Verifying Pattern - Successful verification";
 		log_string();
-		test_status++; //Since the verify pattern is supposed to fail
+		test_status++;
 	}
 	else
 	{
@@ -117,7 +117,7 @@ int main(void)
 	if(status == SUCCESS)
 	{
 		// Displaying the pattern
-		logger_instance->data = (uint32_t*) display_memory(base, 16);
+		logger_instance->data = (ARCH_SIZE*) display_memory(base, 16);
 		logger_instance->length = 16;
 		log_data();
 	}
@@ -150,7 +150,7 @@ int main(void)
 	if(status == SUCCESS)
 	{
 		// Display the pattern
-		logger_instance->data = (uint32_t*) display_memory(get_address(base, 9), 16);
+		logger_instance->data = (ARCH_SIZE*) display_memory(get_address(base, 9), 16);
 		logger_instance->length = 4;
 		log_data();
 	}
@@ -182,7 +182,7 @@ int main(void)
 	status = invert_block(get_address(base, 9), 4);
 	if(status == SUCCESS)
 	{
-		logger_instance->data = (uint32_t*) display_memory(get_address(base, 9), 16);
+		logger_instance->data = (ARCH_SIZE*) display_memory(get_address(base, 9), 16);
 		logger_instance->length = 4;
 		log_data();
 	}
@@ -226,7 +226,7 @@ int main(void)
 
 
 /* Function definitions */
-uint8_t get_length(uint32_t* address, uint8_t length_of_array)
+uint8_t get_length(ARCH_SIZE* address, uint8_t length_of_array)
 {
 	uint8_t length = 0;
 	for (uint8_t i = 0; i < length_of_array; i++)

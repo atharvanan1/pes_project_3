@@ -22,7 +22,7 @@ ARM_CC := arm-none-eabi-gcc
 ARM_LL := arm-none-eabi-gcc
 
 # PC_FLAGS
-PC_FLAGS := -c -Wall -Werror -g
+PC_FLAGS := -c -Wall -Werror -g -DARCH_SIZE=uint64_t
 
 # ARM_FLAGS
 ARM_FLAGS := -c \
@@ -35,7 +35,8 @@ ARM_FLAGS := -c \
 			 -fdata-sections \
 			 -fno-builtin \
 			 -mcpu=cortex-m0plus \
-			 -mthumb
+			 -mthumb \
+			 -DARCH_SIZE=uint32_t
 			 
 # ARM Linker Flags
 ARM_LL_FLAGS := -v \
@@ -210,24 +211,27 @@ kl25z : directories $(ARM_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_contr
 	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z ./source/main.c -o $(DEBUG)/source/main.o
 	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
 	@arm-none-eabi-gcc -nostdlib -Xlinker -Map="./Debug/pes_project_3.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T linkerfile.ld -o ./Debug/pes_project_3.axf ./Debug/source/logger/logger.o ./Debug/source/mem_test/allocate.o ./Debug/source/mem_test/display.o  ./Debug/source/mem_test/free.o ./Debug/source/mem_test/get_addr.o ./Debug/source/mem_test/invert.o ./Debug/source/mem_test/mem_write.o ./Debug/source/mem_test/pattern_write.o ./Debug/source/mem_test/verify.o ./Debug/source/pattern_gen/pattern_gen.o ./Debug/startup/startup_mkl25z4.o ./Debug/CMSIS/system_MKL25Z4.o ./Debug/board/board.o ./Debug/board/clock_config.o ./Debug/board/peripherals.o ./Debug/board/pin_mux.o ./Debug/drivers/fsl_clock.o ./Debug/drivers/fsl_common.o ./Debug/drivers/fsl_flash.o ./Debug/drivers/fsl_gpio.o ./Debug/drivers/fsl_lpsci.o ./Debug/drivers/fsl_smc.o ./Debug/drivers/fsl_uart.o ./Debug/utilities/fsl_debug_console.o ./Debug/source/main.o ./Debug/source/led_control/led_control.o
+	@echo "KL25Z without logging made"
 	
 kl25z_log : directories $(ARM_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
 	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z_LOG $(SOURCE)/main.c -o $(DEBUG)/source/main.o
 	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z_LOG $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
 	@arm-none-eabi-gcc -nostdlib -Xlinker -Map="./Debug/pes_project_3.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T linkerfile.ld -o ./Debug/pes_project_3.axf ./Debug/source/logger/logger.o ./Debug/source/mem_test/allocate.o ./Debug/source/mem_test/display.o  ./Debug/source/mem_test/free.o ./Debug/source/mem_test/get_addr.o ./Debug/source/mem_test/invert.o ./Debug/source/mem_test/mem_write.o ./Debug/source/mem_test/pattern_write.o ./Debug/source/mem_test/verify.o ./Debug/source/pattern_gen/pattern_gen.o ./Debug/startup/startup_mkl25z4.o ./Debug/CMSIS/system_MKL25Z4.o ./Debug/board/board.o ./Debug/board/clock_config.o ./Debug/board/peripherals.o ./Debug/board/pin_mux.o ./Debug/drivers/fsl_clock.o ./Debug/drivers/fsl_common.o ./Debug/drivers/fsl_flash.o ./Debug/drivers/fsl_gpio.o ./Debug/drivers/fsl_lpsci.o ./Debug/drivers/fsl_smc.o ./Debug/drivers/fsl_uart.o ./Debug/utilities/fsl_debug_console.o ./Debug/source/main.o ./Debug/source/led_control/led_control.o
+	@echo "KL25Z with logging made"
 	
 pc : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c $(SOURCE)/mem_test/verify.c
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/main.c -o $(DEBUG)/source/main.o
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/mem_test/verify.c -o $(DEBUG)/source/mem_test/verify.o
 	@$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/mem_test/verify.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
+	@echo "PC without logging made"
 	
 pc_log : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
-	@echo "PC LOG MADE"
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/main.c -o $(DEBUG)/source/main.o
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/mem_test/verify.c -o $(DEBUG)/source/mem_test/verify.o
 	@$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/mem_test/verify.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
+	@echo "PC with logging made"
 
 #####################################################################
 # Essesntial ARM Object Files

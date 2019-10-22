@@ -7,10 +7,10 @@
   * URL				-
   */
 #include "verify.h"
-uint32_t * verify_pattern(uint32_t * loc, size_t length, int8_t seed)
+ARCH_SIZE * verify_pattern(uint32_t * loc, size_t length, int8_t seed)
 {
 	uint8_t* temp = (uint8_t*) loc;
-	extern uint32_t buffer_address[16];
+	extern ARCH_SIZE buffer_address[16];
 	uint8_t pattern_holder[length];
 	pattern_generator(pattern_holder, length, seed);
 	volatile uint8_t i, j = 0;
@@ -22,7 +22,7 @@ uint32_t * verify_pattern(uint32_t * loc, size_t length, int8_t seed)
 		}
 		else if (*(temp + i) != pattern_holder[i])
 		{
-			*(buffer_address + j) = (uint32_t) (temp + i);
+			*(buffer_address + j) = (ARCH_SIZE) (temp + i);
 			j++;
 		}
 	}

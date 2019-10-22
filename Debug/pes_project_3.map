@@ -97,7 +97,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/source/mem_test/allocate.o
  .data          0x0000000000000000        0x0 ./Debug/source/mem_test/allocate.o
  .bss           0x0000000000000000        0x0 ./Debug/source/mem_test/allocate.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/source/mem_test/allocate.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/source/mem_test/allocate.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/source/mem_test/allocate.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/source/mem_test/allocate.o
  .debug_macro   0x0000000000000000      0x5b3 ./Debug/source/mem_test/allocate.o
@@ -109,7 +109,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/source/mem_test/display.o
  .data          0x0000000000000000        0x0 ./Debug/source/mem_test/display.o
  .bss           0x0000000000000000        0x0 ./Debug/source/mem_test/display.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/source/mem_test/display.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/source/mem_test/display.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/source/mem_test/display.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/source/mem_test/display.o
  .debug_macro   0x0000000000000000      0x5b3 ./Debug/source/mem_test/display.o
@@ -122,7 +122,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/source/mem_test/free.o
  .data          0x0000000000000000        0x0 ./Debug/source/mem_test/free.o
  .bss           0x0000000000000000        0x0 ./Debug/source/mem_test/free.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/source/mem_test/free.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/source/mem_test/free.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/source/mem_test/free.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/source/mem_test/free.o
  .debug_macro   0x0000000000000000      0x5b3 ./Debug/source/mem_test/free.o
@@ -134,7 +134,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/source/mem_test/get_addr.o
  .data          0x0000000000000000        0x0 ./Debug/source/mem_test/get_addr.o
  .bss           0x0000000000000000        0x0 ./Debug/source/mem_test/get_addr.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/source/mem_test/get_addr.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/source/mem_test/get_addr.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/source/mem_test/get_addr.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/source/mem_test/get_addr.o
  .debug_macro   0x0000000000000000      0x5b3 ./Debug/source/mem_test/get_addr.o
@@ -146,7 +146,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/source/mem_test/invert.o
  .data          0x0000000000000000        0x0 ./Debug/source/mem_test/invert.o
  .bss           0x0000000000000000        0x0 ./Debug/source/mem_test/invert.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/source/mem_test/invert.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/source/mem_test/invert.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/source/mem_test/invert.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/source/mem_test/invert.o
  .debug_macro   0x0000000000000000       0x28 ./Debug/source/mem_test/invert.o
@@ -159,7 +159,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/source/mem_test/mem_write.o
  .data          0x0000000000000000        0x0 ./Debug/source/mem_test/mem_write.o
  .bss           0x0000000000000000        0x0 ./Debug/source/mem_test/mem_write.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/source/mem_test/mem_write.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/source/mem_test/mem_write.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/source/mem_test/mem_write.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/source/mem_test/mem_write.o
  .debug_macro   0x0000000000000000      0x5b3 ./Debug/source/mem_test/mem_write.o
@@ -172,7 +172,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/source/mem_test/pattern_write.o
  .data          0x0000000000000000        0x0 ./Debug/source/mem_test/pattern_write.o
  .bss           0x0000000000000000        0x0 ./Debug/source/mem_test/pattern_write.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/source/mem_test/pattern_write.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/source/mem_test/pattern_write.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/source/mem_test/pattern_write.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/source/mem_test/pattern_write.o
  .debug_macro   0x0000000000000000      0x5b3 ./Debug/source/mem_test/pattern_write.o
@@ -185,7 +185,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/source/mem_test/verify.o
  .data          0x0000000000000000        0x0 ./Debug/source/mem_test/verify.o
  .bss           0x0000000000000000        0x0 ./Debug/source/mem_test/verify.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/source/mem_test/verify.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/source/mem_test/verify.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/source/mem_test/verify.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/source/mem_test/verify.o
  .debug_macro   0x0000000000000000      0x5b3 ./Debug/source/mem_test/verify.o
@@ -197,7 +197,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/source/pattern_gen/pattern_gen.o
  .data          0x0000000000000000        0x0 ./Debug/source/pattern_gen/pattern_gen.o
  .bss           0x0000000000000000        0x0 ./Debug/source/pattern_gen/pattern_gen.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/source/pattern_gen/pattern_gen.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/source/pattern_gen/pattern_gen.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/source/pattern_gen/pattern_gen.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/source/pattern_gen/pattern_gen.o
  .debug_macro   0x0000000000000000      0x5b3 ./Debug/source/pattern_gen/pattern_gen.o
@@ -205,7 +205,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/startup/startup_mkl25z4.o
  .data          0x0000000000000000        0x0 ./Debug/startup/startup_mkl25z4.o
  .bss           0x0000000000000000        0x0 ./Debug/startup/startup_mkl25z4.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/startup/startup_mkl25z4.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/startup/startup_mkl25z4.o
  .group         0x0000000000000000        0xc ./Debug/CMSIS/system_MKL25Z4.o
  .group         0x0000000000000000        0xc ./Debug/CMSIS/system_MKL25Z4.o
  .group         0x0000000000000000        0xc ./Debug/CMSIS/system_MKL25Z4.o
@@ -223,7 +223,7 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 ./Debug/CMSIS/system_MKL25Z4.o
  .text.SystemCoreClockUpdate
                 0x0000000000000000      0x238 ./Debug/CMSIS/system_MKL25Z4.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/CMSIS/system_MKL25Z4.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/CMSIS/system_MKL25Z4.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/CMSIS/system_MKL25Z4.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/CMSIS/system_MKL25Z4.o
  .debug_macro   0x0000000000000000      0x5b3 ./Debug/CMSIS/system_MKL25Z4.o
@@ -252,7 +252,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/board/board.o
  .data          0x0000000000000000        0x0 ./Debug/board/board.o
  .bss           0x0000000000000000        0x0 ./Debug/board/board.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/board/board.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/board/board.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/board/board.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/board/board.o
  .debug_macro   0x0000000000000000      0x5b3 ./Debug/board/board.o
@@ -297,7 +297,7 @@ Discarded input sections
                 0x0000000000000000        0x8 ./Debug/board/clock_config.o
  .text.BOARD_BootClockVLPR
                 0x0000000000000000       0x5c ./Debug/board/clock_config.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/board/clock_config.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/board/clock_config.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/board/clock_config.o
  .debug_macro   0x0000000000000000       0x22 ./Debug/board/clock_config.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/board/clock_config.o
@@ -318,7 +318,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/board/peripherals.o
  .data          0x0000000000000000        0x0 ./Debug/board/peripherals.o
  .bss           0x0000000000000000        0x0 ./Debug/board/peripherals.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/board/peripherals.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/board/peripherals.o
  .group         0x0000000000000000        0xc ./Debug/board/pin_mux.o
  .group         0x0000000000000000        0xc ./Debug/board/pin_mux.o
  .group         0x0000000000000000        0xc ./Debug/board/pin_mux.o
@@ -341,7 +341,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/board/pin_mux.o
  .data          0x0000000000000000        0x0 ./Debug/board/pin_mux.o
  .bss           0x0000000000000000        0x0 ./Debug/board/pin_mux.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/board/pin_mux.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/board/pin_mux.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/board/pin_mux.o
  .debug_macro   0x0000000000000000       0x1c ./Debug/board/pin_mux.o
  .debug_macro   0x0000000000000000       0x22 ./Debug/board/pin_mux.o
@@ -464,7 +464,7 @@ Discarded input sections
                 0x0000000000000000       0x20 ./Debug/drivers/fsl_clock.o
  .rodata.trimRange.5322
                 0x0000000000000000       0x10 ./Debug/drivers/fsl_clock.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/drivers/fsl_clock.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/drivers/fsl_clock.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/drivers/fsl_clock.o
  .debug_macro   0x0000000000000000       0x1c ./Debug/drivers/fsl_clock.o
  .debug_macro   0x0000000000000000       0x22 ./Debug/drivers/fsl_clock.o
@@ -515,7 +515,7 @@ Discarded input sections
                 0x0000000000000000       0x30 ./Debug/drivers/fsl_common.o
  .debug_ranges  0x0000000000000000       0x20 ./Debug/drivers/fsl_common.o
  .debug_macro   0x0000000000000000      0x102 ./Debug/drivers/fsl_common.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/drivers/fsl_common.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/drivers/fsl_common.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/drivers/fsl_common.o
  .debug_macro   0x0000000000000000       0x1c ./Debug/drivers/fsl_common.o
  .debug_macro   0x0000000000000000       0x22 ./Debug/drivers/fsl_common.o
@@ -535,7 +535,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xd2 ./Debug/drivers/fsl_common.o
  .debug_macro   0x0000000000000000       0x1c ./Debug/drivers/fsl_common.o
  .debug_line    0x0000000000000000      0x33d ./Debug/drivers/fsl_common.o
- .debug_str     0x0000000000000000    0x30bd0 ./Debug/drivers/fsl_common.o
+ .debug_str     0x0000000000000000    0x30be3 ./Debug/drivers/fsl_common.o
  .comment       0x0000000000000000       0x76 ./Debug/drivers/fsl_common.o
  .debug_frame   0x0000000000000000       0x70 ./Debug/drivers/fsl_common.o
  .ARM.attributes
@@ -661,7 +661,7 @@ Discarded input sections
                 0x0000000000000000      0x138 ./Debug/drivers/fsl_flash.o
  .debug_ranges  0x0000000000000000      0x128 ./Debug/drivers/fsl_flash.o
  .debug_macro   0x0000000000000000      0x347 ./Debug/drivers/fsl_flash.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/drivers/fsl_flash.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/drivers/fsl_flash.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/drivers/fsl_flash.o
  .debug_macro   0x0000000000000000       0x1c ./Debug/drivers/fsl_flash.o
  .debug_macro   0x0000000000000000       0x22 ./Debug/drivers/fsl_flash.o
@@ -680,7 +680,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x35 ./Debug/drivers/fsl_flash.o
  .debug_macro   0x0000000000000000       0x43 ./Debug/drivers/fsl_flash.o
  .debug_line    0x0000000000000000      0xd71 ./Debug/drivers/fsl_flash.o
- .debug_str     0x0000000000000000    0x33105 ./Debug/drivers/fsl_flash.o
+ .debug_str     0x0000000000000000    0x33118 ./Debug/drivers/fsl_flash.o
  .comment       0x0000000000000000       0x76 ./Debug/drivers/fsl_flash.o
  .debug_frame   0x0000000000000000      0x490 ./Debug/drivers/fsl_flash.o
  .ARM.attributes
@@ -726,7 +726,7 @@ Discarded input sections
                 0x0000000000000000       0x40 ./Debug/drivers/fsl_gpio.o
  .debug_ranges  0x0000000000000000       0x30 ./Debug/drivers/fsl_gpio.o
  .debug_macro   0x0000000000000000       0xec ./Debug/drivers/fsl_gpio.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/drivers/fsl_gpio.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/drivers/fsl_gpio.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/drivers/fsl_gpio.o
  .debug_macro   0x0000000000000000       0x1c ./Debug/drivers/fsl_gpio.o
  .debug_macro   0x0000000000000000       0x22 ./Debug/drivers/fsl_gpio.o
@@ -744,7 +744,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xf4 ./Debug/drivers/fsl_gpio.o
  .debug_macro   0x0000000000000000       0x35 ./Debug/drivers/fsl_gpio.o
  .debug_line    0x0000000000000000      0x34d ./Debug/drivers/fsl_gpio.o
- .debug_str     0x0000000000000000    0x30b82 ./Debug/drivers/fsl_gpio.o
+ .debug_str     0x0000000000000000    0x30b95 ./Debug/drivers/fsl_gpio.o
  .comment       0x0000000000000000       0x76 ./Debug/drivers/fsl_gpio.o
  .debug_frame   0x0000000000000000       0xb0 ./Debug/drivers/fsl_gpio.o
  .ARM.attributes
@@ -821,7 +821,7 @@ Discarded input sections
                 0x0000000000000000      0x384 ./Debug/drivers/fsl_lpsci.o
  .text.LPSCI_TransferHandleErrorIRQ
                 0x0000000000000000       0x12 ./Debug/drivers/fsl_lpsci.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/drivers/fsl_lpsci.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/drivers/fsl_lpsci.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/drivers/fsl_lpsci.o
  .debug_macro   0x0000000000000000       0x1c ./Debug/drivers/fsl_lpsci.o
  .debug_macro   0x0000000000000000       0x22 ./Debug/drivers/fsl_lpsci.o
@@ -886,7 +886,7 @@ Discarded input sections
                 0x0000000000000000       0x68 ./Debug/drivers/fsl_smc.o
  .debug_ranges  0x0000000000000000       0x58 ./Debug/drivers/fsl_smc.o
  .debug_macro   0x0000000000000000       0xf5 ./Debug/drivers/fsl_smc.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/drivers/fsl_smc.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/drivers/fsl_smc.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/drivers/fsl_smc.o
  .debug_macro   0x0000000000000000       0x1c ./Debug/drivers/fsl_smc.o
  .debug_macro   0x0000000000000000       0x22 ./Debug/drivers/fsl_smc.o
@@ -905,7 +905,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x35 ./Debug/drivers/fsl_smc.o
  .debug_macro   0x0000000000000000       0x49 ./Debug/drivers/fsl_smc.o
  .debug_line    0x0000000000000000      0x494 ./Debug/drivers/fsl_smc.o
- .debug_str     0x0000000000000000    0x30c38 ./Debug/drivers/fsl_smc.o
+ .debug_str     0x0000000000000000    0x30c4b ./Debug/drivers/fsl_smc.o
  .comment       0x0000000000000000       0x76 ./Debug/drivers/fsl_smc.o
  .debug_frame   0x0000000000000000      0x150 ./Debug/drivers/fsl_smc.o
  .ARM.attributes
@@ -984,7 +984,7 @@ Discarded input sections
                 0x0000000000000000        0xe ./Debug/drivers/fsl_uart.o
  .text.UART2_RX_TX_DriverIRQHandler
                 0x0000000000000000        0xe ./Debug/drivers/fsl_uart.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/drivers/fsl_uart.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/drivers/fsl_uart.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/drivers/fsl_uart.o
  .debug_macro   0x0000000000000000       0x1c ./Debug/drivers/fsl_uart.o
  .debug_macro   0x0000000000000000       0x22 ./Debug/drivers/fsl_uart.o
@@ -1033,7 +1033,7 @@ Discarded input sections
                 0x0000000000000000       0x60 ./Debug/utilities/fsl_debug_console.o
  .text.__sys_readc
                 0x0000000000000000       0x34 ./Debug/utilities/fsl_debug_console.o
- .debug_macro   0x0000000000000000      0xac0 ./Debug/utilities/fsl_debug_console.o
+ .debug_macro   0x0000000000000000      0xac6 ./Debug/utilities/fsl_debug_console.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/utilities/fsl_debug_console.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/utilities/fsl_debug_console.o
  .debug_macro   0x0000000000000000       0x28 ./Debug/utilities/fsl_debug_console.o
@@ -1130,7 +1130,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Debug/source/led_control/led_control.o
  .data          0x0000000000000000        0x0 ./Debug/source/led_control/led_control.o
  .bss           0x0000000000000000        0x0 ./Debug/source/led_control/led_control.o
- .debug_macro   0x0000000000000000      0xac6 ./Debug/source/led_control/led_control.o
+ .debug_macro   0x0000000000000000      0xacc ./Debug/source/led_control/led_control.o
  .debug_macro   0x0000000000000000       0x10 ./Debug/source/led_control/led_control.o
  .debug_macro   0x0000000000000000      0x12e ./Debug/source/led_control/led_control.o
  .debug_macro   0x0000000000000000       0xd8 ./Debug/source/led_control/led_control.o
@@ -2064,66 +2064,66 @@ OUTPUT(./Debug/pes_project_3.axf elf32-littlearm)
  .debug_ranges  0x0000000000000708       0x28 ./Debug/source/main.o
  .debug_ranges  0x0000000000000730       0x28 ./Debug/source/led_control/led_control.o
 
-.debug_macro    0x0000000000000000     0x9b9d
+.debug_macro    0x0000000000000000     0x9ba9
  .debug_macro   0x0000000000000000       0x63 ./Debug/source/logger/logger.o
- .debug_macro   0x0000000000000063      0xac0 ./Debug/source/logger/logger.o
- .debug_macro   0x0000000000000b23       0x10 ./Debug/source/logger/logger.o
- .debug_macro   0x0000000000000b33      0x12e ./Debug/source/logger/logger.o
- .debug_macro   0x0000000000000c61       0xd8 ./Debug/source/logger/logger.o
- .debug_macro   0x0000000000000d39      0x5b3 ./Debug/source/logger/logger.o
- .debug_macro   0x00000000000012ec       0x59 ./Debug/source/mem_test/allocate.o
- .debug_macro   0x0000000000001345       0x28 ./Debug/source/mem_test/allocate.o
- .debug_macro   0x000000000000136d       0x59 ./Debug/source/mem_test/display.o
- .debug_macro   0x00000000000013c6       0x59 ./Debug/source/mem_test/free.o
- .debug_macro   0x000000000000141f       0x46 ./Debug/source/mem_test/get_addr.o
- .debug_macro   0x0000000000001465       0x63 ./Debug/source/mem_test/invert.o
- .debug_macro   0x00000000000014c8       0x63 ./Debug/source/mem_test/mem_write.o
- .debug_macro   0x000000000000152b       0x6d ./Debug/source/mem_test/pattern_write.o
- .debug_macro   0x0000000000001598       0x6d ./Debug/source/mem_test/verify.o
- .debug_macro   0x0000000000001605       0x46 ./Debug/source/pattern_gen/pattern_gen.o
- .debug_macro   0x000000000000164b       0x29 ./Debug/startup/startup_mkl25z4.o
- .debug_macro   0x0000000000001674       0x94 ./Debug/CMSIS/system_MKL25Z4.o
- .debug_macro   0x0000000000001708       0x10 ./Debug/CMSIS/system_MKL25Z4.o
- .debug_macro   0x0000000000001718       0x3f ./Debug/CMSIS/system_MKL25Z4.o
- .debug_macro   0x0000000000001757       0x3a ./Debug/CMSIS/system_MKL25Z4.o
- .debug_macro   0x0000000000001791       0x26 ./Debug/CMSIS/system_MKL25Z4.o
- .debug_macro   0x00000000000017b7      0x329 ./Debug/CMSIS/system_MKL25Z4.o
- .debug_macro   0x0000000000001ae0       0x30 ./Debug/CMSIS/system_MKL25Z4.o
- .debug_macro   0x0000000000001b10     0x51e2 ./Debug/CMSIS/system_MKL25Z4.o
- .debug_macro   0x0000000000006cf2     0x1352 ./Debug/CMSIS/system_MKL25Z4.o
- .debug_macro   0x0000000000008044      0x12b ./Debug/board/board.o
- .debug_macro   0x000000000000816f       0x16 ./Debug/board/board.o
- .debug_macro   0x0000000000008185       0x22 ./Debug/board/board.o
- .debug_macro   0x00000000000081a7       0x3a ./Debug/board/board.o
- .debug_macro   0x00000000000081e1       0xf4 ./Debug/board/board.o
- .debug_macro   0x00000000000082d5       0x35 ./Debug/board/board.o
- .debug_macro   0x000000000000830a       0x16 ./Debug/board/board.o
- .debug_macro   0x0000000000008320       0x10 ./Debug/board/board.o
- .debug_macro   0x0000000000008330      0x112 ./Debug/board/board.o
- .debug_macro   0x0000000000008442       0xd2 ./Debug/board/board.o
- .debug_macro   0x0000000000008514       0x1c ./Debug/board/board.o
- .debug_macro   0x0000000000008530      0x123 ./Debug/board/clock_config.o
- .debug_macro   0x0000000000008653       0x1c ./Debug/board/clock_config.o
- .debug_macro   0x000000000000866f       0x1b ./Debug/board/peripherals.o
- .debug_macro   0x000000000000868a       0xee ./Debug/board/pin_mux.o
- .debug_macro   0x0000000000008778       0x10 ./Debug/board/pin_mux.o
- .debug_macro   0x0000000000008788       0x64 ./Debug/board/pin_mux.o
- .debug_macro   0x00000000000087ec      0x196 ./Debug/drivers/fsl_clock.o
- .debug_macro   0x0000000000008982       0xec ./Debug/drivers/fsl_lpsci.o
- .debug_macro   0x0000000000008a6e       0xf2 ./Debug/drivers/fsl_uart.o
- .debug_macro   0x0000000000008b60      0x13a ./Debug/utilities/fsl_debug_console.o
- .debug_macro   0x0000000000008c9a       0x16 ./Debug/utilities/fsl_debug_console.o
- .debug_macro   0x0000000000008cb0       0x10 ./Debug/utilities/fsl_debug_console.o
- .debug_macro   0x0000000000008cc0       0xc4 ./Debug/utilities/fsl_debug_console.o
- .debug_macro   0x0000000000008d84       0x10 ./Debug/utilities/fsl_debug_console.o
- .debug_macro   0x0000000000008d94       0x10 ./Debug/utilities/fsl_debug_console.o
- .debug_macro   0x0000000000008da4      0x1dc ./Debug/source/main.o
- .debug_macro   0x0000000000008f80      0xac6 ./Debug/source/main.o
- .debug_macro   0x0000000000009a46       0x1c ./Debug/source/main.o
- .debug_macro   0x0000000000009a62      0x125 ./Debug/source/led_control/led_control.o
- .debug_macro   0x0000000000009b87       0x16 ./Debug/source/led_control/led_control.o
+ .debug_macro   0x0000000000000063      0xac6 ./Debug/source/logger/logger.o
+ .debug_macro   0x0000000000000b29       0x10 ./Debug/source/logger/logger.o
+ .debug_macro   0x0000000000000b39      0x12e ./Debug/source/logger/logger.o
+ .debug_macro   0x0000000000000c67       0xd8 ./Debug/source/logger/logger.o
+ .debug_macro   0x0000000000000d3f      0x5b3 ./Debug/source/logger/logger.o
+ .debug_macro   0x00000000000012f2       0x59 ./Debug/source/mem_test/allocate.o
+ .debug_macro   0x000000000000134b       0x28 ./Debug/source/mem_test/allocate.o
+ .debug_macro   0x0000000000001373       0x59 ./Debug/source/mem_test/display.o
+ .debug_macro   0x00000000000013cc       0x59 ./Debug/source/mem_test/free.o
+ .debug_macro   0x0000000000001425       0x46 ./Debug/source/mem_test/get_addr.o
+ .debug_macro   0x000000000000146b       0x63 ./Debug/source/mem_test/invert.o
+ .debug_macro   0x00000000000014ce       0x63 ./Debug/source/mem_test/mem_write.o
+ .debug_macro   0x0000000000001531       0x6d ./Debug/source/mem_test/pattern_write.o
+ .debug_macro   0x000000000000159e       0x6d ./Debug/source/mem_test/verify.o
+ .debug_macro   0x000000000000160b       0x46 ./Debug/source/pattern_gen/pattern_gen.o
+ .debug_macro   0x0000000000001651       0x29 ./Debug/startup/startup_mkl25z4.o
+ .debug_macro   0x000000000000167a       0x94 ./Debug/CMSIS/system_MKL25Z4.o
+ .debug_macro   0x000000000000170e       0x10 ./Debug/CMSIS/system_MKL25Z4.o
+ .debug_macro   0x000000000000171e       0x3f ./Debug/CMSIS/system_MKL25Z4.o
+ .debug_macro   0x000000000000175d       0x3a ./Debug/CMSIS/system_MKL25Z4.o
+ .debug_macro   0x0000000000001797       0x26 ./Debug/CMSIS/system_MKL25Z4.o
+ .debug_macro   0x00000000000017bd      0x329 ./Debug/CMSIS/system_MKL25Z4.o
+ .debug_macro   0x0000000000001ae6       0x30 ./Debug/CMSIS/system_MKL25Z4.o
+ .debug_macro   0x0000000000001b16     0x51e2 ./Debug/CMSIS/system_MKL25Z4.o
+ .debug_macro   0x0000000000006cf8     0x1352 ./Debug/CMSIS/system_MKL25Z4.o
+ .debug_macro   0x000000000000804a      0x12b ./Debug/board/board.o
+ .debug_macro   0x0000000000008175       0x16 ./Debug/board/board.o
+ .debug_macro   0x000000000000818b       0x22 ./Debug/board/board.o
+ .debug_macro   0x00000000000081ad       0x3a ./Debug/board/board.o
+ .debug_macro   0x00000000000081e7       0xf4 ./Debug/board/board.o
+ .debug_macro   0x00000000000082db       0x35 ./Debug/board/board.o
+ .debug_macro   0x0000000000008310       0x16 ./Debug/board/board.o
+ .debug_macro   0x0000000000008326       0x10 ./Debug/board/board.o
+ .debug_macro   0x0000000000008336      0x112 ./Debug/board/board.o
+ .debug_macro   0x0000000000008448       0xd2 ./Debug/board/board.o
+ .debug_macro   0x000000000000851a       0x1c ./Debug/board/board.o
+ .debug_macro   0x0000000000008536      0x123 ./Debug/board/clock_config.o
+ .debug_macro   0x0000000000008659       0x1c ./Debug/board/clock_config.o
+ .debug_macro   0x0000000000008675       0x1b ./Debug/board/peripherals.o
+ .debug_macro   0x0000000000008690       0xee ./Debug/board/pin_mux.o
+ .debug_macro   0x000000000000877e       0x10 ./Debug/board/pin_mux.o
+ .debug_macro   0x000000000000878e       0x64 ./Debug/board/pin_mux.o
+ .debug_macro   0x00000000000087f2      0x196 ./Debug/drivers/fsl_clock.o
+ .debug_macro   0x0000000000008988       0xec ./Debug/drivers/fsl_lpsci.o
+ .debug_macro   0x0000000000008a74       0xf2 ./Debug/drivers/fsl_uart.o
+ .debug_macro   0x0000000000008b66      0x13a ./Debug/utilities/fsl_debug_console.o
+ .debug_macro   0x0000000000008ca0       0x16 ./Debug/utilities/fsl_debug_console.o
+ .debug_macro   0x0000000000008cb6       0x10 ./Debug/utilities/fsl_debug_console.o
+ .debug_macro   0x0000000000008cc6       0xc4 ./Debug/utilities/fsl_debug_console.o
+ .debug_macro   0x0000000000008d8a       0x10 ./Debug/utilities/fsl_debug_console.o
+ .debug_macro   0x0000000000008d9a       0x10 ./Debug/utilities/fsl_debug_console.o
+ .debug_macro   0x0000000000008daa      0x1dc ./Debug/source/main.o
+ .debug_macro   0x0000000000008f86      0xacc ./Debug/source/main.o
+ .debug_macro   0x0000000000009a52       0x1c ./Debug/source/main.o
+ .debug_macro   0x0000000000009a6e      0x125 ./Debug/source/led_control/led_control.o
+ .debug_macro   0x0000000000009b93       0x16 ./Debug/source/led_control/led_control.o
 
-.debug_line     0x0000000000000000     0x5dbb
+.debug_line     0x0000000000000000     0x5dbd
  .debug_line    0x0000000000000000      0x2ea ./Debug/source/logger/logger.o
  .debug_line    0x00000000000002ea      0x1a7 ./Debug/source/mem_test/allocate.o
  .debug_line    0x0000000000000491      0x1a2 ./Debug/source/mem_test/display.o
@@ -2144,54 +2144,54 @@ OUTPUT(./Debug/pes_project_3.axf elf32-littlearm)
  .debug_line    0x000000000000353f      0xd34 ./Debug/drivers/fsl_lpsci.o
  .debug_line    0x0000000000004273      0xd23 ./Debug/drivers/fsl_uart.o
  .debug_line    0x0000000000004f96      0x472 ./Debug/utilities/fsl_debug_console.o
- .debug_line    0x0000000000005408      0x660 ./Debug/source/main.o
- .debug_line    0x0000000000005a68      0x353 ./Debug/source/led_control/led_control.o
+ .debug_line    0x0000000000005408      0x662 ./Debug/source/main.o
+ .debug_line    0x0000000000005a6a      0x353 ./Debug/source/led_control/led_control.o
 
-.debug_str      0x0000000000000000    0x35bf6
- .debug_str     0x0000000000000000     0x486a ./Debug/source/logger/logger.o
-                                       0x4924 (size before relaxing)
- .debug_str     0x000000000000486a       0xbf ./Debug/source/mem_test/allocate.o
-                                       0x45c0 (size before relaxing)
- .debug_str     0x0000000000004929       0x3e ./Debug/source/mem_test/display.o
-                                       0x45c6 (size before relaxing)
- .debug_str     0x0000000000004967       0x34 ./Debug/source/mem_test/free.o
-                                       0x45a6 (size before relaxing)
- .debug_str     0x000000000000499b       0x4d ./Debug/source/mem_test/get_addr.o
-                                       0x4541 (size before relaxing)
- .debug_str     0x00000000000049e8       0x58 ./Debug/source/mem_test/invert.o
-                                       0x45fd (size before relaxing)
- .debug_str     0x0000000000004a40       0x46 ./Debug/source/mem_test/mem_write.o
-                                       0x45fb (size before relaxing)
- .debug_str     0x0000000000004a86       0x69 ./Debug/source/mem_test/pattern_write.o
-                                       0x462e (size before relaxing)
- .debug_str     0x0000000000004aef       0x5a ./Debug/source/mem_test/verify.o
-                                       0x4613 (size before relaxing)
- .debug_str     0x0000000000004b49       0x44 ./Debug/source/pattern_gen/pattern_gen.o
-                                       0x4550 (size before relaxing)
- .debug_str     0x0000000000004b8d      0x3de ./Debug/startup/startup_mkl25z4.o
-                                       0x3216 (size before relaxing)
- .debug_str     0x0000000000004f6b    0x2b625 ./Debug/CMSIS/system_MKL25Z4.o
-                                      0x2fc87 (size before relaxing)
- .debug_str     0x0000000000030590     0x179e ./Debug/board/board.o
-                                      0x3174c (size before relaxing)
- .debug_str     0x0000000000031d2e      0x814 ./Debug/board/clock_config.o
-                                      0x3124b (size before relaxing)
- .debug_str     0x0000000000032542       0x3f ./Debug/board/peripherals.o
-                                       0x2e20 (size before relaxing)
- .debug_str     0x0000000000032581      0x548 ./Debug/board/pin_mux.o
-                                      0x30b5f (size before relaxing)
- .debug_str     0x0000000000032ac9     0x132a ./Debug/drivers/fsl_clock.o
-                                      0x3231d (size before relaxing)
- .debug_str     0x0000000000033df3      0xc8f ./Debug/drivers/fsl_lpsci.o
-                                      0x31925 (size before relaxing)
- .debug_str     0x0000000000034a82      0x93a ./Debug/drivers/fsl_uart.o
-                                      0x31948 (size before relaxing)
- .debug_str     0x00000000000353bc      0x70b ./Debug/utilities/fsl_debug_console.o
-                                      0x31839 (size before relaxing)
- .debug_str     0x0000000000035ac7       0x85 ./Debug/source/main.o
-                                      0x31f2a (size before relaxing)
- .debug_str     0x0000000000035b4c       0xaa ./Debug/source/led_control/led_control.o
-                                      0x316bc (size before relaxing)
+.debug_str      0x0000000000000000    0x35c00
+ .debug_str     0x0000000000000000     0x4874 ./Debug/source/logger/logger.o
+                                       0x4937 (size before relaxing)
+ .debug_str     0x0000000000004874       0xbf ./Debug/source/mem_test/allocate.o
+                                       0x45d3 (size before relaxing)
+ .debug_str     0x0000000000004933       0x3e ./Debug/source/mem_test/display.o
+                                       0x45d9 (size before relaxing)
+ .debug_str     0x0000000000004971       0x34 ./Debug/source/mem_test/free.o
+                                       0x45b9 (size before relaxing)
+ .debug_str     0x00000000000049a5       0x4d ./Debug/source/mem_test/get_addr.o
+                                       0x4554 (size before relaxing)
+ .debug_str     0x00000000000049f2       0x58 ./Debug/source/mem_test/invert.o
+                                       0x4610 (size before relaxing)
+ .debug_str     0x0000000000004a4a       0x46 ./Debug/source/mem_test/mem_write.o
+                                       0x460e (size before relaxing)
+ .debug_str     0x0000000000004a90       0x69 ./Debug/source/mem_test/pattern_write.o
+                                       0x4641 (size before relaxing)
+ .debug_str     0x0000000000004af9       0x5a ./Debug/source/mem_test/verify.o
+                                       0x4626 (size before relaxing)
+ .debug_str     0x0000000000004b53       0x44 ./Debug/source/pattern_gen/pattern_gen.o
+                                       0x4563 (size before relaxing)
+ .debug_str     0x0000000000004b97      0x3de ./Debug/startup/startup_mkl25z4.o
+                                       0x3229 (size before relaxing)
+ .debug_str     0x0000000000004f75    0x2b625 ./Debug/CMSIS/system_MKL25Z4.o
+                                      0x2fc9a (size before relaxing)
+ .debug_str     0x000000000003059a     0x179e ./Debug/board/board.o
+                                      0x3175f (size before relaxing)
+ .debug_str     0x0000000000031d38      0x814 ./Debug/board/clock_config.o
+                                      0x3125e (size before relaxing)
+ .debug_str     0x000000000003254c       0x3f ./Debug/board/peripherals.o
+                                       0x2e33 (size before relaxing)
+ .debug_str     0x000000000003258b      0x548 ./Debug/board/pin_mux.o
+                                      0x30b72 (size before relaxing)
+ .debug_str     0x0000000000032ad3     0x132a ./Debug/drivers/fsl_clock.o
+                                      0x32330 (size before relaxing)
+ .debug_str     0x0000000000033dfd      0xc8f ./Debug/drivers/fsl_lpsci.o
+                                      0x31938 (size before relaxing)
+ .debug_str     0x0000000000034a8c      0x93a ./Debug/drivers/fsl_uart.o
+                                      0x3195b (size before relaxing)
+ .debug_str     0x00000000000353c6      0x70b ./Debug/utilities/fsl_debug_console.o
+                                      0x3184c (size before relaxing)
+ .debug_str     0x0000000000035ad1       0x85 ./Debug/source/main.o
+                                      0x31f3d (size before relaxing)
+ .debug_str     0x0000000000035b56       0xaa ./Debug/source/led_control/led_control.o
+                                      0x316cf (size before relaxing)
 
 .comment        0x0000000000000000       0x75
  .comment       0x0000000000000000       0x75 ./Debug/source/logger/logger.o

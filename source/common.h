@@ -19,7 +19,7 @@ typedef struct logger{
 	uint8_t status;
 	char* string;
 	uint32_t integer;
-	uint32_t* data;
+	ARCH_SIZE * data;
 	size_t length;
 }logger;
 #endif /* COMMON_H_ */

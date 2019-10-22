@@ -52,12 +52,12 @@ void log_address(void)
 	if(logger_instance -> status == 1)
 	{
 		printf("Logger Instance - defunct addresses----------\n\r");
-		uint32_t* temp = logger_instance->data;
+		ARCH_SIZE* temp = logger_instance->data;
 		volatile uint8_t i;
 		printf("Addresses\n\r");
 		for (i = 0; i < logger_instance->length; i++)
 		{
-			printf("%#x\n\r", *(temp + i));
+			printf("%#lx\n\r", *(temp + i));
 		}
 	}
 }
