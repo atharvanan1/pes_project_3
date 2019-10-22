@@ -742,6 +742,8 @@ void init(void)
 #endif
 ```
 
+---
+
 **main.h**
 
 ```c
@@ -780,6 +782,8 @@ void init(void)
 #endif /* MAIN_H_ */
 ```
 
+---
+
 **common.h**
 
 ```c
@@ -812,6 +816,8 @@ typedef struct logger{
 }logger;
 #endif /* COMMON_H_ */
 ```
+
+---
 
 **led_control/led_control.c**
 
@@ -871,6 +877,8 @@ void Turn_On_Only_LED(uint8_t LED)
 }
 ```
 
+---
+
 **led_control/led_control.h**
 
 ```c
@@ -897,6 +905,8 @@ void Turn_On_Only_LED(uint8_t LED)
 void Turn_On_Only_LED(uint8_t LED_Macro);
 #endif /* LED_CONTROL_H_ */
 ```
+
+---
 
 **logger/logger.c**
 
@@ -981,6 +991,8 @@ void log_int()
 }
 ```
 
+---
+
 **logger/logger.h**
 
 ```c
@@ -1009,6 +1021,8 @@ extern logger* logger_instance;
 #endif /* LOGGER_H_ */
 ```
 
+---
+
 **mem_test/allocate.c**
 
 ```c
@@ -1030,6 +1044,8 @@ uint32_t * allocate_words(size_t length)
 }
 ```
 
+---
+
 **mem_test/allocate.h**
 
 ```c
@@ -1049,6 +1065,8 @@ uint32_t * allocate_words(size_t length)
 uint32_t * allocate_words(size_t length);
 #endif /* MEM_TEST_ALLOCATE_H_ */
 ```
+
+---
 
 **mem_test/display.c**
 
@@ -1071,6 +1089,8 @@ uint8_t * display_memory(uint32_t *loc, size_t length)
 }
 ```
 
+---
+
 **mem_test/display.h**
 
 ```c
@@ -1090,6 +1110,8 @@ uint8_t * display_memory(uint32_t *loc, size_t length)
 uint8_t * display_memory(uint32_t *loc, size_t length);
 #endif /* MEM_TEST_DISPLAY_H_ */
 ```
+
+---
 
 **mem_test/free.c**
 
@@ -1112,6 +1134,8 @@ void free_words(uint32_t* src)
 
 ```
 
+---
+
 **mem_test/free.h**
 
 ```c
@@ -1131,6 +1155,8 @@ void free_words(uint32_t* src)
 void free_words(uint32_t* src);
 #endif /* MEM_TEST_FREE_H_ */
 ```
+
+---
 
 **mem_test/get_addr.c**
 
@@ -1155,6 +1181,8 @@ uint32_t* get_address(uint32_t* base, uint16_t offset)
 }
 ```
 
+---
+
 **mem_test/get_addr.h**
 
 ```c
@@ -1174,6 +1202,8 @@ uint32_t* get_address(uint32_t* base, uint16_t offset);
 #endif /* MEM_TEST_GET_ADDR_H_ */
 
 ```
+
+---
 
 **mem_test/invert.c**
 
@@ -1208,6 +1238,8 @@ mem_status invert_block(uint32_t* loc, size_t length)
 
 ```
 
+---
+
 **mem_test/invert.h**
 
 ```c
@@ -1229,6 +1261,8 @@ mem_status invert_block(uint32_t* loc, size_t length);
 #endif /* MEM_TEST_INVERT_H_ */
 
 ```
+
+---
 
 **mem_test/mem_write.c**
 
@@ -1258,6 +1292,8 @@ mem_status write_memory(uint32_t* loc, uint8_t value)
 
 ```
 
+---
+
 **mem_test/mem_write.h**
 
 ```c
@@ -1279,6 +1315,8 @@ mem_status write_memory(uint32_t* loc, uint8_t value);
 #endif /* MEM_TEST_MEM_WRITE_H_ */
 
 ```
+
+---
 
 **mem_test/pattern_write.c**
 
@@ -1308,6 +1346,8 @@ mem_status write_pattern(uint32_t * loc, size_t length, int8_t seed)
 
 ```
 
+---
+
 **mem_test/pattern_write.h**
 
 ```c
@@ -1330,6 +1370,8 @@ mem_status write_pattern(uint32_t * loc, size_t length, int8_t seed);
 #endif /* MEM_TEST_PATTERN_WRITE_H_ */
 
 ```
+
+---
 
 **mem_test/verify.c**
 
@@ -1385,6 +1427,8 @@ ARCH_SIZE * verify_pattern(uint32_t * loc, size_t length, int8_t seed)
 
 ```
 
+---
+
 **mem_test/verify.h**
 
 ```c
@@ -1408,6 +1452,8 @@ ARCH_SIZE * verify_pattern(uint32_t * loc, size_t length, int8_t seed);
 #endif /* MEM_TEST_VERIFY_H_ */
 
 ```
+
+---
 
 **pattern_gen/pattern_gen.c**
 
@@ -1448,6 +1494,8 @@ void pattern_generator(uint8_t *pattern, uint8_t length, int8_t seed)
 
 ```
 
+---
+
 **pattern_gen/pattern_gen.h**
 
 ```c
@@ -1468,3 +1516,5 @@ void pattern_generator(uint8_t *pattern, uint8_t length, int8_t seed);
 #endif /* PATTERN_GEN_H_ */
 
 ```
+
+
