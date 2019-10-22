@@ -84,7 +84,8 @@ PC_INCS := \
 		   -I"$(SOURCE)/logger" \
 		   -I"$(SOURCE)/mem_test" \
 		   -I"$(SOURCE)/pattern_gen" \
-		   -I"$(SOURCE)/unit_tests"
+		   -I"$(SOURCE)/unit_tests" \
+		   -I"ucunit"
 		    
 # PC Object Files
 PC_OBJS := \
@@ -96,6 +97,7 @@ PC_OBJS := \
 		   $(DEBUG)/source/mem_test/invert.o \
 		   $(DEBUG)/source/mem_test/mem_write.o \
 		   $(DEBUG)/source/mem_test/pattern_write.o \
+		   $(DEBUG)/source/mem_test/verify.o \
 		   $(DEBUG)/source/pattern_gen/pattern_gen.o
 		   
 # PC Dependencies Files
@@ -108,6 +110,7 @@ PC_DEPS := \
 		   $(DEBUG)/source/mem_test/invert.d \
 		   $(DEBUG)/source/mem_test/mem_write.d \
 		   $(DEBUG)/source/mem_test/pattern_write.d \
+		   $(DEBUG)/source/mem_test/verify.d \
 		   $(DEBUG)/source/pattern_gen/pattern_gen.d
 
 # ARM Include Files
@@ -123,6 +126,7 @@ ARM_INCS := \
 		   -I"drivers" \
 		   -I"startup" \
 		   -I"utilities" \
+		   -I"ucunit"
 		   
 # ARM Object Files 
 ARM_OBJS := \
@@ -194,11 +198,17 @@ PLATFORM := KL25Z
 else ifeq ($(BUILD), KL25Z_LOG)
 build_option := kl25z_log
 PLATFORM := KL25Z
+else ifeq ($(BUILD), KL25Z_TESTS)
+build_option := kl25z_tests
+PLATFORM := KL25Z
 else ifeq ($(BUILD), PC)
 build_option := pc
 PLATFORM := PC
 else ifeq ($(BUILD), PC_LOG)
 build_option := pc_log
+PLATFORM := PC
+else ifeq ($(BUILD), PC_TESTS)
+build_option := pc_tests
 PLATFORM := PC
 endif
 #####################################################################
@@ -237,31 +247,31 @@ pc_log : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_contr
 # Essesntial ARM Object Files
 $(DEBUG)/board/%.o: ./board/%.c
 	@echo 'Building file: $<'
-	$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 $(DEBUG)/CMSIS/%.o: ./CMSIS/%.c
 	@echo 'Building file: $<'
-	$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 $(DEBUG)/drivers/%.o: ./drivers/%.c
 	@echo 'Building file: $<'
-	$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 	
 $(DEBUG)/startup/%.o: ./startup/%.c
 	@echo 'Building file: $<'
-	$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 	
 $(DEBUG)/utilities/%.o: ./utilities/%.c
 	@echo 'Building file: $<'
-	$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 	
@@ -270,19 +280,19 @@ $(DEBUG)/utilities/%.o: ./utilities/%.c
 ifeq ($(PLATFORM), KL25Z)
 $(DEBUG)/source/logger/logger.o : $(SOURCE)/logger/logger.c
 	@echo 'Building file: $<'
-	$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 $(DEBUG)/source/mem_test/%.o : $(SOURCE)/mem_test/%.c
 	@echo 'Building file: $<'
-	$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 	
 $(DEBUG)/source/pattern_gen/%.o : $(SOURCE)/pattern_gen/%.c
 	@echo 'Building file: $<'
-	$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 #####################################################################
@@ -316,6 +326,7 @@ directories :
 	$(DEBUG)/drivers \
 	$(DEBUG)/startup \
 	$(DEBUG)/utilities \
+	$(DEBUG)/ucunit \
 	$(DEBUG)/source/led_control \
 	$(DEBUG)/source/logger \
 	$(DEBUG)/source/mem_test \
@@ -332,9 +343,4 @@ clean:
 	$(DEBUG)/source \
 	$(DEBUG)/pes_project_3.axf \
 	$(DEBUG)/pes_project_3.map
-	@echo "Build cleaned"
-	
-	
-.PHONY: linking
-linking: 
-	
+	@echo "Build cleaned"	
