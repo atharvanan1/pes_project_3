@@ -3,7 +3,8 @@
  * @brief   Application entry point.
  */
 #include "main.h"
-/* TODO: insert other include files here. */
+
+// Global Data types
 logger logger_1 = {
 		0,
 		NULL,
@@ -12,11 +13,10 @@ logger logger_1 = {
 		0,
 };
 logger* logger_instance = &logger_1;
-
 uint32_t buffer_address[16];
-
 uint8_t length = 0;
-/* TODO: insert other definitions and declarations here. */
+
+// Function declarations
 uint8_t get_length(uint32_t* address, uint8_t length_of_array);
 void delay(void);
 #if defined(KL25Z) || defined(KL25Z_LOG)
@@ -25,17 +25,20 @@ void init(void);
 /*
  * @brief   Application entry point.
  */
-int main(void) {
-
+int main(void)
+{
+// Board pins and peripherals initialization
 #if defined(KL25Z) || defined(KL25Z_LOG)
 	init();
 #endif
 
+// Logger control
 #if defined(KL25Z_LOG) || defined(PC_LOG)
 	logger_enable();
 #else
 	logger_disable();
 #endif
+
 	uint32_t* base = NULL;
 	uint32_t* address = NULL;
 	size_t length = 16;
@@ -84,6 +87,8 @@ int main(void) {
 	// Write 0xFFEE into a memory region
 	write_memory(get_address(base, 7), 0xEE);
 	write_memory(get_address(base, 8), 0xFF);
+	logger_instance->string = "Writing 0xFFEE to a memory location";
+	log_string();
 
 	// Display the pattern
 	logger_instance->data = (uint32_t*) display_memory(get_address(base, 7), 2);
