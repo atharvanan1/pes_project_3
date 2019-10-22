@@ -1,6 +1,6 @@
 /**
   * File Name 		- verify.h
-  * Description 	- builds C project
+  * Description 	- header file for verify.c
   * Author			- Atharva Nandanwar
   * Tools			- GNU C Compiler / ARM Compiler Toolchain
   * Leveraged Code 	-

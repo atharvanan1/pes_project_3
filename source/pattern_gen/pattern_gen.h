@@ -1,9 +1,12 @@
-/*
- * pattern_gen.h
- *
- *  Created on: Oct 9, 2019
- *      Author: azzentys
- */
+/**
+  * File Name 		- pattern_gen.h
+  * Description 	- header file for pattern_gen.c
+  * Author			- Atharva Nandanwar
+  * Tools			- GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code 	-
+  * URL				-
+  */
+
 
 #ifndef PATTERN_GEN_H_
 #define PATTERN_GEN_H_

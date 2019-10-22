@@ -1,9 +1,12 @@
-/*
- * logger.c
- *
- *  Created on: Oct 9, 2019
- *      Author: azzentys
- */
+/**
+  * File Name 		- logger.c
+  * Description 	- contains logger functions
+  * Author			- Atharva Nandanwar
+  * Tools			- GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code 	-
+  * URL				-
+  */
+
 
 #include "logger.h"
 
@@ -32,6 +35,7 @@ void log_string(void)
 	}
 }
 
+// Used to print byte data from given memory address
 void log_data(void)
 {
 	if(logger_instance -> status == 1)
@@ -47,6 +51,8 @@ void log_data(void)
 	}
 }
 
+// Used to print addresses from given memory address
+// Use case - verify pattern
 void log_address(void)
 {
 	if(logger_instance -> status == 1)

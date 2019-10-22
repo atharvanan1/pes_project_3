@@ -1,9 +1,11 @@
-/*
- * invert.h
- *
- *  Created on: Oct 9, 2019
- *      Author: azzentys
- */
+/**
+  * File Name 		- invert.h
+  * Description 	- header file for invert.c
+  * Author			- Atharva Nandanwar
+  * Tools			- GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code 	-
+  * URL				-
+  */
 
 #ifndef MEM_TEST_INVERT_H_
 #define MEM_TEST_INVERT_H_

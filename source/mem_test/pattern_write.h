@@ -1,9 +1,11 @@
-/*
- * pattern_write.h
- *
- *  Created on: Oct 9, 2019
- *      Author: azzentys
- */
+/**
+  * File Name 		- pattern_write.h
+  * Description 	- header file for pattern_write.c
+  * Author			- Atharva Nandanwar
+  * Tools			- GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code 	-
+  * URL				-
+  */
 
 #ifndef MEM_TEST_PATTERN_WRITE_H_
 #define MEM_TEST_PATTERN_WRITE_H_

@@ -1,9 +1,12 @@
-/*
- * common.h
- *
- *  Created on: Oct 12, 2019
- *      Author: azzentys
- */
+/**
+  * File Name 		- common.h
+  * Description 	- common header file with global data structures
+  * Author			- Atharva Nandanwar
+  * Tools			- GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code 	-
+  * URL				-
+  */
+
 
 #ifndef COMMON_H_
 #define COMMON_H_

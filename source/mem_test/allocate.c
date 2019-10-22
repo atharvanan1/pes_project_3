@@ -1,6 +1,6 @@
 /**
   * File Name 		- allocate.c
-  * Description 	- builds C project
+  * Description 	- contains function which allocates memory
   * Author			- Atharva Nandanwar
   * Tools			- GNU C Compiler / ARM Compiler Toolchain
   * Leveraged Code 	-

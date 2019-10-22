@@ -1,9 +1,12 @@
-/*
- * led_control.h
- *
- *  Created on: Oct 9, 2019
- *      Author: azzentys
- */
+/**
+  * File Name 		- led_control.h
+  * Description 	- header file for led_control.c
+  * Author			- Atharva Nandanwar
+  * Tools			- GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code 	-
+  * URL				-
+  */
+
 
 #ifndef LED_CONTROL_H_
 #define LED_CONTROL_H_

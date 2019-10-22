@@ -1,7 +1,12 @@
 /**
- * @file    main.c
- * @brief   Application entry point.
- */
+  * File Name 		- main.c
+  * Description 	- contains main program sequence
+  * Author			- Atharva Nandanwar
+  * Tools			- GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code 	-
+  * URL				-
+  */
+
 #include "main.h"
 
 // Global Data types
@@ -22,12 +27,11 @@ void delay(void);
 #if defined(KL25Z) || defined(KL25Z_LOG)
 void init(void);
 #endif
-/*
- * @brief   Application entry point.
- */
+
+// Start of main
 int main(void)
 {
-// Board pins and peripherals initialization
+// Board pins and peripherals initialization - KL25Z only
 #if defined(KL25Z) || defined(KL25Z_LOG)
 	init();
 #endif
@@ -101,7 +105,7 @@ int main(void)
 	{
 		logger_instance->string = "Verifying Pattern - Successful verification";
 		log_string();
-		test_status++;
+		test_status++;	// Since the test is supposed to fail
 	}
 	else
 	{
@@ -226,6 +230,7 @@ int main(void)
 
 
 /* Function definitions */
+// To determine how many defunct addresses are present
 uint8_t get_length(ARCH_SIZE* address, uint8_t length_of_array)
 {
 	uint8_t length = 0;
@@ -237,6 +242,7 @@ uint8_t get_length(ARCH_SIZE* address, uint8_t length_of_array)
 	return length;
 }
 
+// Just some minor delay
 void delay(void)
 {
 	volatile uint32_t i = 2300 * 3000;

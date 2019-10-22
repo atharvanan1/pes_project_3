@@ -1,9 +1,11 @@
-/*
- * logger.h
- *
- *  Created on: Oct 9, 2019
- *      Author: azzentys
- */
+/**
+  * File Name 		- logger.h
+  * Description 	- header file for logger.c
+  * Author			- Atharva Nandanwar
+  * Tools			- GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code 	-
+  * URL				-
+  */
 
 #ifndef LOGGER_H_
 #define LOGGER_H_

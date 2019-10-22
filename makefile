@@ -4,8 +4,10 @@
 
 #####################################################################
 # Build Variables
+
 # Program for removing files
 RM := rm -rf
+
 # Program for making directories
 MK := mkdir -p
 
@@ -21,10 +23,11 @@ ARM_CC := arm-none-eabi-gcc
 # ARM linker
 ARM_LL := arm-none-eabi-gcc
 
-# PC_FLAGS
+#####################################################################
+# PC Compiler Flags
 PC_FLAGS := -c -Wall -Werror -g -DARCH_SIZE=uint64_t
 
-# ARM_FLAGS
+# ARM Compiler Flags
 ARM_FLAGS := -c \
 			 -std=c99 \
 			 -O0 \
@@ -215,20 +218,24 @@ endif
 
 $(EXE) : $(build_option)
 	
-
-# Rules for making EXE files
+#####################################################################
+# Rule for making KL25Z target without logging
 kl25z : directories $(ARM_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
 	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z ./source/main.c -o $(DEBUG)/source/main.o
 	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
 	@arm-none-eabi-gcc -nostdlib -Xlinker -Map="./Debug/pes_project_3.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T linkerfile.ld -o ./Debug/pes_project_3.axf ./Debug/source/logger/logger.o ./Debug/source/mem_test/allocate.o ./Debug/source/mem_test/display.o  ./Debug/source/mem_test/free.o ./Debug/source/mem_test/get_addr.o ./Debug/source/mem_test/invert.o ./Debug/source/mem_test/mem_write.o ./Debug/source/mem_test/pattern_write.o ./Debug/source/mem_test/verify.o ./Debug/source/pattern_gen/pattern_gen.o ./Debug/startup/startup_mkl25z4.o ./Debug/CMSIS/system_MKL25Z4.o ./Debug/board/board.o ./Debug/board/clock_config.o ./Debug/board/peripherals.o ./Debug/board/pin_mux.o ./Debug/drivers/fsl_clock.o ./Debug/drivers/fsl_common.o ./Debug/drivers/fsl_flash.o ./Debug/drivers/fsl_gpio.o ./Debug/drivers/fsl_lpsci.o ./Debug/drivers/fsl_smc.o ./Debug/drivers/fsl_uart.o ./Debug/utilities/fsl_debug_console.o ./Debug/source/main.o ./Debug/source/led_control/led_control.o
 	@echo "KL25Z without logging made"
-	
+
+#####################################################################
+# Rule for making KL25Z target with logging
 kl25z_log : directories $(ARM_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
 	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z_LOG $(SOURCE)/main.c -o $(DEBUG)/source/main.o
 	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z_LOG $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
 	@arm-none-eabi-gcc -nostdlib -Xlinker -Map="./Debug/pes_project_3.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T linkerfile.ld -o ./Debug/pes_project_3.axf ./Debug/source/logger/logger.o ./Debug/source/mem_test/allocate.o ./Debug/source/mem_test/display.o  ./Debug/source/mem_test/free.o ./Debug/source/mem_test/get_addr.o ./Debug/source/mem_test/invert.o ./Debug/source/mem_test/mem_write.o ./Debug/source/mem_test/pattern_write.o ./Debug/source/mem_test/verify.o ./Debug/source/pattern_gen/pattern_gen.o ./Debug/startup/startup_mkl25z4.o ./Debug/CMSIS/system_MKL25Z4.o ./Debug/board/board.o ./Debug/board/clock_config.o ./Debug/board/peripherals.o ./Debug/board/pin_mux.o ./Debug/drivers/fsl_clock.o ./Debug/drivers/fsl_common.o ./Debug/drivers/fsl_flash.o ./Debug/drivers/fsl_gpio.o ./Debug/drivers/fsl_lpsci.o ./Debug/drivers/fsl_smc.o ./Debug/drivers/fsl_uart.o ./Debug/utilities/fsl_debug_console.o ./Debug/source/main.o ./Debug/source/led_control/led_control.o
 	@echo "KL25Z with logging made"
-	
+
+#####################################################################
+# Rule for making PC target without logging	
 pc : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c $(SOURCE)/mem_test/verify.c
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/main.c -o $(DEBUG)/source/main.o
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
@@ -236,6 +243,8 @@ pc : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
 	@$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/mem_test/verify.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
 	@echo "PC without logging made"
 	
+#####################################################################
+# Rule for making PC target with logging
 pc_log : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/main.c -o $(DEBUG)/source/main.o
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
@@ -317,6 +326,8 @@ $(DEBUG)/source/pattern_gen/%.o : $(SOURCE)/pattern_gen/%.c
 	@echo ' '
 endif
 
+#####################################################################
+# Making directories
 .PHONY : directories
 directories :
 	$(MK) \
@@ -333,6 +344,7 @@ directories :
 	$(DEBUG)/source/pattern_gen \
 	$(DEBUG)/source/unit_tests
 	
+# Clean target
 clean:
 	@$(RM) \
 	$(DEBUG)/board \
