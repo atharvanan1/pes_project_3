@@ -40,13 +40,20 @@ void log_data(void)
 {
 	if(logger_instance -> status == 1)
 	{
-		printf("Logger Instance - dumping data----------\n\r");
-		uint8_t* temp = (uint8_t *) logger_instance->data;
-		volatile uint8_t i;
-		printf("Address      Data\n\r");
-		for (i = 0; i < logger_instance->length; i++)
+		if(logger_instance->data != NULL)
 		{
-			printf("%p - %#02x\n\r", (temp + i), *(temp + i));
+			printf("Logger Instance - dumping data----------\n\r");
+			uint8_t* temp = (uint8_t *) logger_instance->data;
+			volatile uint8_t i;
+			printf("Address      Data\n\r");
+			for (i = 0; i < logger_instance->length; i++)
+			{
+				printf("%p - %#02x\n\r", (temp + i), *(temp + i));
+			}
+		}
+		else
+		{
+			printf("Failed to log data - Passed NULL\n\r");
 		}
 	}
 }

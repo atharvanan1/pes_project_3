@@ -50,12 +50,25 @@ int main(void)
 	uint8_t test_status = SUCCESS;
 	volatile uint8_t status;
 
-	// Starting the tests
+	// Starting the tests--------------------------------------------
 	Turn_On_Only_LED(BLUE);
-	// Memory allocation
+	// Memory allocation---------------------------------------------
 	base = allocate_words(length);
+	if(base == NULL)
+	{
+		logger_instance->string = "Failed to allocate memory";
+		log_string();
+		test_status++;
+	}
+	else
+	{
+		logger_instance->string = "Successful memory allocation";
+		log_string();
 
-	// Writing pattern into allocated memory
+	}
+
+
+	// Writing pattern into allocated memory-------------------------
 	status = write_pattern(base, length, seed);
 	if(status == SUCCESS)
 	{
@@ -71,52 +84,88 @@ int main(void)
 		test_status++;
 	}
 
-	// Verifying the pattern
+	// Verifying the pattern-----------------------------------------
 	address = verify_pattern(base, length, seed);
-	if(address[0] == 0)
+	if(address != NULL)
 	{
-		logger_instance->string = "Verifying Pattern - Successful verification";
+		if(address[0] == 0) // Verification successful
+		{
+			logger_instance->string = "Verifying Pattern - Successful verification";
+			log_string();
+		}
+		else
+		{
+			logger_instance->string = "Verifying Pattern - Failure to verify";
+			log_string();
+			logger_instance->data = address;
+			logger_instance->length = get_length(address, length);
+			log_address();
+			test_status++; //Since the verify pattern is supposed to fail
+		}
+	}
+	else
+	{
+		logger_instance->string = "Failed - Passed NULL";
+		log_string();
+		test_status++; //Since NULL means failure
+	}
+
+	// Write 0xEE into a memory region-------------------------------
+	if(write_memory(get_address(base, 7), 0xEE))
+	{
+		logger_instance->string = "Failed to write at memory location";
 		log_string();
 	}
 	else
 	{
-		logger_instance->string = "Verifying Pattern - Failure to verify";
+		logger_instance->string = "Failed to write at memory location";
 		log_string();
-		logger_instance->data = address;
-		logger_instance->length = get_length(address, 16);
-		log_address();
-		test_status++;
+	}
+	// Write 0xFF into a memory region-------------------------------
+	if(write_memory(get_address(base, 8), 0xFF))
+	{
+		logger_instance->string = "Failed to write at memory location";
+		log_string();
+	}
+	else
+	{
+		logger_instance->string = "Failed to write at memory location";
+		log_string();
 	}
 
-	// Write 0xFFEE into a memory region
-	write_memory(get_address(base, 7), 0xEE);
-	write_memory(get_address(base, 8), 0xFF);
-	logger_instance->string = "Writing 0xFFEE to a memory location";
-	log_string();
 
-	// Display the pattern
+	// Display the pattern-------------------------------------------
 	logger_instance->data = (ARCH_SIZE*) display_memory(get_address(base, 7), 2);
 	logger_instance->length = 2;
 	log_data();
 
-	// Verify the pattern
+	// Verifying the pattern-----------------------------------------
 	address = verify_pattern(base, length, seed);
-	if(address[0] == 0)
+	if(address != NULL)
 	{
-		logger_instance->string = "Verifying Pattern - Successful verification";
-		log_string();
-		test_status++;	// Since the test is supposed to fail
+		if(address[0] == 0) // Verification successful
+		{
+			logger_instance->string = "Verifying Pattern - Successful verification";
+			log_string();
+			test_status++; //Since the verify pattern is supposed to fail
+		}
+		else
+		{
+			logger_instance->string = "Verifying Pattern - Failure to verify";
+			log_string();
+			logger_instance->data = address;
+			logger_instance->length = get_length(address, length);
+			log_address();
+		}
 	}
 	else
 	{
-		logger_instance->string = "Verifying Pattern - Failure to verify";
+		logger_instance->string = "Verify Failed - Passed NULL";
 		log_string();
-		logger_instance->data = address;
-		logger_instance->length = get_length(address, length);
-		log_address();
+		test_status++;
 	}
 
-	// Write the pattern
+	// Write the pattern---------------------------------------------
 	status = write_pattern(base, length, seed);
 	if(status == SUCCESS)
 	{
@@ -132,24 +181,33 @@ int main(void)
 		test_status++;
 	}
 
-	// Verifying the pattern
+	// Verifying the pattern-----------------------------------------
 	address = verify_pattern(base, length, seed);
-	if(address[0] == 0)
+	if(address != NULL)
 	{
-		logger_instance->string = "Verifying Pattern - Successful verification";
-		log_string();
+		if(address[0] == 0) // Verification successful
+		{
+			logger_instance->string = "Verifying Pattern - Successful verification";
+			log_string();
+		}
+		else
+		{
+			logger_instance->string = "Verifying Pattern - Failure to verify";
+			log_string();
+			logger_instance->data = address;
+			logger_instance->length = get_length(address, length);
+			log_address();
+			test_status++; //Since the verify pattern is supposed to fail
+		}
 	}
 	else
 	{
-		logger_instance->string = "Verifying Pattern - Failure to verify";
+		logger_instance->string = "Failed - Passed NULL";
 		log_string();
-		logger_instance->data = address;
-		logger_instance->length = get_length(address, length);
-		log_address();
 		test_status++;
 	}
 
-	// Invert a block of memory
+	// Invert a block of memory--------------------------------------
 	status = invert_block(get_address(base, 9), 4);
 	if(status == SUCCESS)
 	{
@@ -165,24 +223,34 @@ int main(void)
 		test_status++;
 	}
 
-	// Verifying the pattern
+	// Verifying the pattern-----------------------------------------
 	address = verify_pattern(base, length, seed);
-	if(address[0] == 0)
+	if(address != NULL)
 	{
-		logger_instance->string = "Verifying Pattern - Successful verification";
-		log_string();
-		test_status++; //Since the verify pattern is supposed to fail
+		if(address[0] == 0) // Verification successful
+		{
+			logger_instance->string = "Verifying Pattern - Successful verification";
+			log_string();
+			test_status++; //Since the verify pattern is supposed to fail
+		}
+		else
+		{
+			logger_instance->string = "Verifying Pattern - Failure to verify";
+			log_string();
+			logger_instance->data = address;
+			logger_instance->length = get_length(address, length);
+			log_address();
+		}
 	}
 	else
 	{
-		logger_instance->string = "Verifying Pattern - Failure to verify";
+		logger_instance->string = "Failed - Passed NULL";
 		log_string();
-		logger_instance->data = address;
-		logger_instance->length = get_length(address, length);
-		log_address();
+		test_status++;
 	}
 
-	// Inverting a block of memory
+
+	// Inverting a block of memory-----------------------------------
 	status = invert_block(get_address(base, 9), 4);
 	if(status == SUCCESS)
 	{
@@ -197,24 +265,33 @@ int main(void)
 		test_status++;
 	}
 
-	// Verifying the pattern
+	// Verifying the pattern-----------------------------------------
 	address = verify_pattern(base, length, seed);
-	if(address[0] == 0)
+	if(address != NULL)
 	{
-		logger_instance->string = "Verifying Pattern - Successful verification";
-		log_string();
+		if(address[0] == 0) // Verification successful
+		{
+			logger_instance->string = "Verifying Pattern - Successful verification";
+			log_string();
+		}
+		else
+		{
+			logger_instance->string = "Verifying Pattern - Failure to verify";
+			log_string();
+			logger_instance->data = address;
+			logger_instance->length = get_length(address, length);
+			log_address();
+			test_status++; //Since the verify pattern is supposed to fail
+		}
 	}
 	else
 	{
-		logger_instance->string = "Verifying Pattern - Failure to verify";
+		logger_instance->string = "Failed - Passed NULL";
 		log_string();
-		logger_instance->data = address;
-		logger_instance->length = get_length(address, length);
-		log_address();
 		test_status++;
 	}
 
-	// LED Test Status
+	// LED Test Status-----------------------------------------------
 	delay();
 	if (test_status == SUCCESS)
 	{

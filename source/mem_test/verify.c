@@ -20,30 +20,36 @@ ARCH_SIZE * verify_pattern(uint32_t * loc, size_t length, int8_t seed)
 	pattern_generator(pattern_holder, length, seed);
 	// i for looping through the length of pattern,
 	// j for storing defunct addresses if any
-	volatile uint8_t i, j = 0;
-	for (i = 0; i < length; i++)
+	if(loc != NULL)
 	{
-		// If pattern matches
-		if (*(temp + i) == pattern_holder[i])
-		{
-			continue;
-		}
-		// If pattern doesn't match
-		else if (*(temp + i) != pattern_holder[i])
-		{
-			*(buffer_address + j) = (ARCH_SIZE) (temp + i);
-			j++;
-		}
-	}
-	// If verify pattern sucessful, empty buffer for extra
-	// precautions
-	if(j == 0)
-	{
+		volatile uint8_t i, j = 0;
 		for (i = 0; i < length; i++)
 		{
-			buffer_address[i] = 0;
+			// If pattern matches
+			if (*(temp + i) == pattern_holder[i])
+			{
+				continue;
+			}
+			// If pattern doesn't match
+			else if (*(temp + i) != pattern_holder[i])
+			{
+				*(buffer_address + j) = (ARCH_SIZE) (temp + i);
+				j++;
+			}
 		}
+		// If verify pattern sucessful, empty buffer for extra
+		// precautions
+		if(j == 0)
+		{
+			for (i = 0; i < length; i++)
+			{
+				buffer_address[i] = 0;
+			}
+		}
+		return buffer_address;
 	}
-
-	return buffer_address;
+	else
+	{
+		return NULL;
+	}
 }

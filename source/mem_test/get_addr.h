@@ -10,5 +10,6 @@
 #ifndef MEM_TEST_GET_ADDR_H_
 #define MEM_TEST_GET_ADDR_H_
 #include <stdint.h>
+#include <stdlib.h>
 uint32_t* get_address(uint32_t* base, uint16_t offset);
 #endif /* MEM_TEST_GET_ADDR_H_ */

@@ -142,158 +142,158 @@ PC_FLAGS := -c -Wall -Werror -g -DARCH_SIZE=uint64_t
 
 # ARM Compiler Flags
 ARM_FLAGS := -c \
-			 -std=c99 \
-			 -O0 \
-			 -g3 \
-			 -ffunction-sections \
-			 -fmessage-length=0 \
-			 -fno-common \
-			 -fdata-sections \
-			 -fno-builtin \
-			 -mcpu=cortex-m0plus \
-			 -mthumb \
-			 -DARCH_SIZE=uint32_t
-			 
+             -std=c99 \
+             -O0 \
+             -g3 \
+             -ffunction-sections \
+             -fmessage-length=0 \
+             -fno-common \
+             -fdata-sections \
+             -fno-builtin \
+             -mcpu=cortex-m0plus \
+             -mthumb \
+             -DARCH_SIZE=uint32_t
+
 # ARM Linker Flags
 ARM_LL_FLAGS := -v \
-				-nostdlib \
-			    -Xlinker -Map="./Debug/pes_project_3.map" \
-			    -Xlinker --gc-sections \
-			    -Xlinker -print-memory-usage \
-			    -Xlinker --sort-section=alignment \
-			    -Xlinker --cref \
-			    -mcpu=cortex-m0plus \
-			    -mthumb \
-			    -T linkerfile.ld \
-			    -o $(EXE)
-			
+                -nostdlib \
+                -Xlinker -Map="./Debug/pes_project_3.map" \
+                -Xlinker --gc-sections \
+                -Xlinker -print-memory-usage \
+                -Xlinker --sort-section=alignment \
+                -Xlinker --cref \
+                -mcpu=cortex-m0plus \
+                -mthumb \
+                -T linkerfile.ld \
+                -o $(EXE)
+
 # ARM Defines
 ARM_DEFS := \
-		   -D__REDLIB__ \
-		   -DCPU_MKL25Z128VLK4 \
-		   -DCPU_MKL25Z128VLK4_cm0plus \
-		   -DSDK_OS_BAREMETAL \
-		   -DFSL_RTOS_BM \
-		   -DCR_INTEGER_PRINTF \
-		   -DPRINTF_FLOAT_ENABLE=0 \
-		   -DSCANF_FLOAT_ENABLE=0 \
-		   -DPRINTF_ADVANCED_ENABLE=0 \
-		   -DSCANF_ADVANCED_ENABLE=0 \
-		   -D__MCUXPRESSO \
-		   -D__USE_CMSIS \
-		   -DDEBUG \
-		   -DFRDM_KL25Z \
-		   -DFREEDOM \
-		   -specs=redlib.specs \
-		   -DSDK_DEBUGCONSOLE=0 \
-		   -DSDK_DEBUGCONSOLE_UART 
-		   
+           -D__REDLIB__ \
+           -DCPU_MKL25Z128VLK4 \
+           -DCPU_MKL25Z128VLK4_cm0plus \
+           -DSDK_OS_BAREMETAL \
+           -DFSL_RTOS_BM \
+           -DCR_INTEGER_PRINTF \
+           -DPRINTF_FLOAT_ENABLE=0 \
+           -DSCANF_FLOAT_ENABLE=0 \
+           -DPRINTF_ADVANCED_ENABLE=0 \
+           -DSCANF_ADVANCED_ENABLE=0 \
+           -D__MCUXPRESSO \
+           -D__USE_CMSIS \
+           -DDEBUG \
+           -DFRDM_KL25Z \
+           -DFREEDOM \
+           -specs=redlib.specs \
+           -DSDK_DEBUGCONSOLE=0 \
+           -DSDK_DEBUGCONSOLE_UART 
+
 # Build Folders
 SOURCE := ./source
 DEBUG := ./Debug
 
-		   
+
 # PC Include Files
 PC_INCS := \
-		   -I"$(SOURCE)" \
-		   -I"$(SOURCE)/led_control" \
-		   -I"$(SOURCE)/logger" \
-		   -I"$(SOURCE)/mem_test" \
-		   -I"$(SOURCE)/pattern_gen" \
-		   
+           -I"$(SOURCE)" \
+           -I"$(SOURCE)/led_control" \
+           -I"$(SOURCE)/logger" \
+           -I"$(SOURCE)/mem_test" \
+           -I"$(SOURCE)/pattern_gen" \
+
 # PC Object Files
 PC_OBJS := \
-		   $(DEBUG)/source/logger/logger.o \
-		   $(DEBUG)/source/mem_test/allocate.o \
-		   $(DEBUG)/source/mem_test/display.o \
-		   $(DEBUG)/source/mem_test/free.o \
-		   $(DEBUG)/source/mem_test/get_addr.o \
-		   $(DEBUG)/source/mem_test/invert.o \
-		   $(DEBUG)/source/mem_test/mem_write.o \
-		   $(DEBUG)/source/mem_test/pattern_write.o \
-		   $(DEBUG)/source/mem_test/verify.o \
-		   $(DEBUG)/source/pattern_gen/pattern_gen.o
-		   
+           $(DEBUG)/source/logger/logger.o \
+           $(DEBUG)/source/mem_test/allocate.o \
+           $(DEBUG)/source/mem_test/display.o \
+           $(DEBUG)/source/mem_test/free.o \
+           $(DEBUG)/source/mem_test/get_addr.o \
+           $(DEBUG)/source/mem_test/invert.o \
+           $(DEBUG)/source/mem_test/mem_write.o \
+           $(DEBUG)/source/mem_test/pattern_write.o \
+           $(DEBUG)/source/mem_test/verify.o \
+           $(DEBUG)/source/pattern_gen/pattern_gen.o
+
 # PC Dependencies Files
 PC_DEPS := \
-		   $(DEBUG)/source/logger/logger.d \
-		   $(DEBUG)/source/mem_test/allocate.d \
-		   $(DEBUG)/source/mem_test/display.d \
-		   $(DEBUG)/source/mem_test/free.d \
-		   $(DEBUG)/source/mem_test/get_addr.d \
-		   $(DEBUG)/source/mem_test/invert.d \
-		   $(DEBUG)/source/mem_test/mem_write.d \
-		   $(DEBUG)/source/mem_test/pattern_write.d \
-		   $(DEBUG)/source/mem_test/verify.d \
-		   $(DEBUG)/source/pattern_gen/pattern_gen.d
+           $(DEBUG)/source/logger/logger.d \
+           $(DEBUG)/source/mem_test/allocate.d \
+           $(DEBUG)/source/mem_test/display.d \
+           $(DEBUG)/source/mem_test/free.d \
+           $(DEBUG)/source/mem_test/get_addr.d \
+           $(DEBUG)/source/mem_test/invert.d \
+           $(DEBUG)/source/mem_test/mem_write.d \
+           $(DEBUG)/source/mem_test/pattern_write.d \
+           $(DEBUG)/source/mem_test/verify.d \
+           $(DEBUG)/source/pattern_gen/pattern_gen.d
 
 # ARM Include Files
 ARM_INCS := \
-		   -I"$(SOURCE)" \
-		   -I"$(SOURCE)/led_control" \
-		   -I"$(SOURCE)/logger" \
-		   -I"$(SOURCE)/mem_test" \
-		   -I"$(SOURCE)/pattern_gen" \
-		   -I"board" \
-		   -I"CMSIS" \
-		   -I"drivers" \
-		   -I"startup" \
-		   -I"utilities" \
-		   
+           -I"$(SOURCE)" \
+           -I"$(SOURCE)/led_control" \
+           -I"$(SOURCE)/logger" \
+           -I"$(SOURCE)/mem_test" \
+           -I"$(SOURCE)/pattern_gen" \
+           -I"board" \
+           -I"CMSIS" \
+           -I"drivers" \
+           -I"startup" \
+           -I"utilities" \
+
 # ARM Object Files 
 ARM_OBJS := \
-		   $(DEBUG)/source/logger/logger.o \
-		   $(DEBUG)/source/mem_test/allocate.o \
-		   $(DEBUG)/source/mem_test/display.o \
-		   $(DEBUG)/source/mem_test/free.o \
-		   $(DEBUG)/source/mem_test/get_addr.o \
-		   $(DEBUG)/source/mem_test/invert.o \
-		   $(DEBUG)/source/mem_test/mem_write.o \
-		   $(DEBUG)/source/mem_test/pattern_write.o \
-		   $(DEBUG)/source/mem_test/verify.o \
-		   $(DEBUG)/source/pattern_gen/pattern_gen.o \
-		   $(DEBUG)/startup/startup_mkl25z4.o \
-		   $(DEBUG)/CMSIS/system_MKL25Z4.o \
-		   $(DEBUG)/board/board.o \
-		   $(DEBUG)/board/clock_config.o \
-		   $(DEBUG)/board/peripherals.o \
-		   $(DEBUG)/board/pin_mux.o \
-		   $(DEBUG)/drivers/fsl_clock.o \
-		   $(DEBUG)/drivers/fsl_common.o \
-		   $(DEBUG)/drivers/fsl_flash.o \
-		   $(DEBUG)/drivers/fsl_gpio.o \
-		   $(DEBUG)/drivers/fsl_lpsci.o \
-		   $(DEBUG)/drivers/fsl_smc.o \
-		   $(DEBUG)/drivers/fsl_uart.o \
-		   $(DEBUG)/utilities/fsl_debug_console.o
-	
-# ARM Dependencies Files	   
+           $(DEBUG)/source/logger/logger.o \
+           $(DEBUG)/source/mem_test/allocate.o \
+           $(DEBUG)/source/mem_test/display.o \
+           $(DEBUG)/source/mem_test/free.o \
+           $(DEBUG)/source/mem_test/get_addr.o \
+           $(DEBUG)/source/mem_test/invert.o \
+           $(DEBUG)/source/mem_test/mem_write.o \
+           $(DEBUG)/source/mem_test/pattern_write.o \
+           $(DEBUG)/source/mem_test/verify.o \
+           $(DEBUG)/source/pattern_gen/pattern_gen.o \
+           $(DEBUG)/startup/startup_mkl25z4.o \
+           $(DEBUG)/CMSIS/system_MKL25Z4.o \
+           $(DEBUG)/board/board.o \
+           $(DEBUG)/board/clock_config.o \
+           $(DEBUG)/board/peripherals.o \
+           $(DEBUG)/board/pin_mux.o \
+           $(DEBUG)/drivers/fsl_clock.o \
+           $(DEBUG)/drivers/fsl_common.o \
+           $(DEBUG)/drivers/fsl_flash.o \
+           $(DEBUG)/drivers/fsl_gpio.o \
+           $(DEBUG)/drivers/fsl_lpsci.o \
+           $(DEBUG)/drivers/fsl_smc.o \
+           $(DEBUG)/drivers/fsl_uart.o \
+           $(DEBUG)/utilities/fsl_debug_console.o
+
+# ARM Dependencies Files       
 ARM_DEPS := \
-		   $(DEBUG)/source/logger/logger.d \
-		   $(DEBUG)/source/mem_test/allocate.d \
-		   $(DEBUG)/source/mem_test/display.d \
-		   $(DEBUG)/source/mem_test/free.d \
-		   $(DEBUG)/source/mem_test/get_addr.d \
-		   $(DEBUG)/source/mem_test/invert.d \
-		   $(DEBUG)/source/mem_test/mem_write.d \
-		   $(DEBUG)/source/mem_test/pattern_write.d \
-		   $(DEBUG)/source/mem_test/verify.d \
-		   $(DEBUG)/source/pattern_gen/pattern_gen.d \
-		   $(DEBUG)/startup/startup_mkl25z4.d \
-		   $(DEBUG)/CMSIS/system_MKL25Z4.d \
-		   $(DEBUG)/board/board.d \
-		   $(DEBUG)/board/clock_config.d \
-		   $(DEBUG)/board/peripherals.d \
-		   $(DEBUG)/board/pin_mux.d \
-		   $(DEBUG)/drivers/fsl_clock.d \
-		   $(DEBUG)/drivers/fsl_common.d \
-		   $(DEBUG)/drivers/fsl_flash.d \
-		   $(DEBUG)/drivers/fsl_gpio.d \
-		   $(DEBUG)/drivers/fsl_lpsci.d \
-		   $(DEBUG)/drivers/fsl_smc.d \
-		   $(DEBUG)/drivers/fsl_uart.d \
-		   $(DEBUG)/utilities/fsl_debug_console.d
-		   
+           $(DEBUG)/source/logger/logger.d \
+           $(DEBUG)/source/mem_test/allocate.d \
+           $(DEBUG)/source/mem_test/display.d \
+           $(DEBUG)/source/mem_test/free.d \
+           $(DEBUG)/source/mem_test/get_addr.d \
+           $(DEBUG)/source/mem_test/invert.d \
+           $(DEBUG)/source/mem_test/mem_write.d \
+           $(DEBUG)/source/mem_test/pattern_write.d \
+           $(DEBUG)/source/mem_test/verify.d \
+           $(DEBUG)/source/pattern_gen/pattern_gen.d \
+           $(DEBUG)/startup/startup_mkl25z4.d \
+           $(DEBUG)/CMSIS/system_MKL25Z4.d \
+           $(DEBUG)/board/board.d \
+           $(DEBUG)/board/clock_config.d \
+           $(DEBUG)/board/peripherals.d \
+           $(DEBUG)/board/pin_mux.d \
+           $(DEBUG)/drivers/fsl_clock.d \
+           $(DEBUG)/drivers/fsl_common.d \
+           $(DEBUG)/drivers/fsl_flash.d \
+           $(DEBUG)/drivers/fsl_gpio.d \
+           $(DEBUG)/drivers/fsl_lpsci.d \
+           $(DEBUG)/drivers/fsl_smc.d \
+           $(DEBUG)/drivers/fsl_uart.d \
+           $(DEBUG)/utilities/fsl_debug_console.d
+
 # Executable file
 EXE := $(DEBUG)/pes_project_3.axf
 
@@ -326,143 +326,143 @@ endif
 #####################################################################
 
 $(EXE) : $(build_option)
-	
+
 #####################################################################
 # Rule for making KL25Z target without logging
 kl25z : directories $(ARM_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z ./source/main.c -o $(DEBUG)/source/main.o
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
-	@arm-none-eabi-gcc -nostdlib -Xlinker -Map="./Debug/pes_project_3.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T linkerfile.ld -o ./Debug/pes_project_3.axf ./Debug/source/logger/logger.o ./Debug/source/mem_test/allocate.o ./Debug/source/mem_test/display.o  ./Debug/source/mem_test/free.o ./Debug/source/mem_test/get_addr.o ./Debug/source/mem_test/invert.o ./Debug/source/mem_test/mem_write.o ./Debug/source/mem_test/pattern_write.o ./Debug/source/mem_test/verify.o ./Debug/source/pattern_gen/pattern_gen.o ./Debug/startup/startup_mkl25z4.o ./Debug/CMSIS/system_MKL25Z4.o ./Debug/board/board.o ./Debug/board/clock_config.o ./Debug/board/peripherals.o ./Debug/board/pin_mux.o ./Debug/drivers/fsl_clock.o ./Debug/drivers/fsl_common.o ./Debug/drivers/fsl_flash.o ./Debug/drivers/fsl_gpio.o ./Debug/drivers/fsl_lpsci.o ./Debug/drivers/fsl_smc.o ./Debug/drivers/fsl_uart.o ./Debug/utilities/fsl_debug_console.o ./Debug/source/main.o ./Debug/source/led_control/led_control.o
-	@echo "KL25Z without logging made"
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z ./source/main.c -o $(DEBUG)/source/main.o
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
+    @arm-none-eabi-gcc -nostdlib -Xlinker -Map="./Debug/pes_project_3.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T linkerfile.ld -o ./Debug/pes_project_3.axf ./Debug/source/logger/logger.o ./Debug/source/mem_test/allocate.o ./Debug/source/mem_test/display.o  ./Debug/source/mem_test/free.o ./Debug/source/mem_test/get_addr.o ./Debug/source/mem_test/invert.o ./Debug/source/mem_test/mem_write.o ./Debug/source/mem_test/pattern_write.o ./Debug/source/mem_test/verify.o ./Debug/source/pattern_gen/pattern_gen.o ./Debug/startup/startup_mkl25z4.o ./Debug/CMSIS/system_MKL25Z4.o ./Debug/board/board.o ./Debug/board/clock_config.o ./Debug/board/peripherals.o ./Debug/board/pin_mux.o ./Debug/drivers/fsl_clock.o ./Debug/drivers/fsl_common.o ./Debug/drivers/fsl_flash.o ./Debug/drivers/fsl_gpio.o ./Debug/drivers/fsl_lpsci.o ./Debug/drivers/fsl_smc.o ./Debug/drivers/fsl_uart.o ./Debug/utilities/fsl_debug_console.o ./Debug/source/main.o ./Debug/source/led_control/led_control.o
+    @echo "KL25Z without logging made"
 
 #####################################################################
 # Rule for making KL25Z target with logging
 kl25z_log : directories $(ARM_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z_LOG $(SOURCE)/main.c -o $(DEBUG)/source/main.o
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z_LOG $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
-	@arm-none-eabi-gcc -nostdlib -Xlinker -Map="./Debug/pes_project_3.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T linkerfile.ld -o ./Debug/pes_project_3.axf ./Debug/source/logger/logger.o ./Debug/source/mem_test/allocate.o ./Debug/source/mem_test/display.o  ./Debug/source/mem_test/free.o ./Debug/source/mem_test/get_addr.o ./Debug/source/mem_test/invert.o ./Debug/source/mem_test/mem_write.o ./Debug/source/mem_test/pattern_write.o ./Debug/source/mem_test/verify.o ./Debug/source/pattern_gen/pattern_gen.o ./Debug/startup/startup_mkl25z4.o ./Debug/CMSIS/system_MKL25Z4.o ./Debug/board/board.o ./Debug/board/clock_config.o ./Debug/board/peripherals.o ./Debug/board/pin_mux.o ./Debug/drivers/fsl_clock.o ./Debug/drivers/fsl_common.o ./Debug/drivers/fsl_flash.o ./Debug/drivers/fsl_gpio.o ./Debug/drivers/fsl_lpsci.o ./Debug/drivers/fsl_smc.o ./Debug/drivers/fsl_uart.o ./Debug/utilities/fsl_debug_console.o ./Debug/source/main.o ./Debug/source/led_control/led_control.o
-	@echo "KL25Z with logging made"
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z_LOG $(SOURCE)/main.c -o $(DEBUG)/source/main.o
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -DKL25Z_LOG $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
+    @arm-none-eabi-gcc -nostdlib -Xlinker -Map="./Debug/pes_project_3.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T linkerfile.ld -o ./Debug/pes_project_3.axf ./Debug/source/logger/logger.o ./Debug/source/mem_test/allocate.o ./Debug/source/mem_test/display.o  ./Debug/source/mem_test/free.o ./Debug/source/mem_test/get_addr.o ./Debug/source/mem_test/invert.o ./Debug/source/mem_test/mem_write.o ./Debug/source/mem_test/pattern_write.o ./Debug/source/mem_test/verify.o ./Debug/source/pattern_gen/pattern_gen.o ./Debug/startup/startup_mkl25z4.o ./Debug/CMSIS/system_MKL25Z4.o ./Debug/board/board.o ./Debug/board/clock_config.o ./Debug/board/peripherals.o ./Debug/board/pin_mux.o ./Debug/drivers/fsl_clock.o ./Debug/drivers/fsl_common.o ./Debug/drivers/fsl_flash.o ./Debug/drivers/fsl_gpio.o ./Debug/drivers/fsl_lpsci.o ./Debug/drivers/fsl_smc.o ./Debug/drivers/fsl_uart.o ./Debug/utilities/fsl_debug_console.o ./Debug/source/main.o ./Debug/source/led_control/led_control.o
+    @echo "KL25Z with logging made"
 
 #####################################################################
-# Rule for making PC target without logging	
+# Rule for making PC target without logging    
 pc : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
-	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/main.c -o $(DEBUG)/source/main.o
-	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
-	@$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
-	@echo "PC without logging made"
-	
+    @$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/main.c -o $(DEBUG)/source/main.o
+    @$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
+    @$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
+    @echo "PC without logging made"
+
 #####################################################################
 # Rule for making PC target with logging
 pc_log : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
-	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/main.c -o $(DEBUG)/source/main.o
-	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
-	@$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
-	@echo "PC with logging made"
+    @$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/main.c -o $(DEBUG)/source/main.o
+    @$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
+    @$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
+    @echo "PC with logging made"
 
 #####################################################################
 # Essesntial ARM Object Files
 $(DEBUG)/board/%.o: ./board/%.c
-	@echo 'Building file: $<'
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
+    @echo 'Building file: $<'
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
 
 $(DEBUG)/CMSIS/%.o: ./CMSIS/%.c
-	@echo 'Building file: $<'
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
+    @echo 'Building file: $<'
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
 
 $(DEBUG)/drivers/%.o: ./drivers/%.c
-	@echo 'Building file: $<'
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
-	
+    @echo 'Building file: $<'
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
+
 $(DEBUG)/startup/%.o: ./startup/%.c
-	@echo 'Building file: $<'
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
-	
+    @echo 'Building file: $<'
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
+
 $(DEBUG)/utilities/%.o: ./utilities/%.c
-	@echo 'Building file: $<'
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
-	
+    @echo 'Building file: $<'
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
+
 #####################################################################
 # Compiling files for ARM Builds
 ifeq ($(PLATFORM), KL25Z)
 $(DEBUG)/source/logger/logger.o : $(SOURCE)/logger/logger.c
-	@echo 'Building file: $<'
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
+    @echo 'Building file: $<'
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
 
 $(DEBUG)/source/mem_test/%.o : $(SOURCE)/mem_test/%.c
-	@echo 'Building file: $<'
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
-	
+    @echo 'Building file: $<'
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
+
 $(DEBUG)/source/pattern_gen/%.o : $(SOURCE)/pattern_gen/%.c
-	@echo 'Building file: $<'
-	@$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
+    @echo 'Building file: $<'
+    @$(ARM_CC) $(ARM_FLAGS) $(ARM_DEFS) $(ARM_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
 #####################################################################
 # Compiling files for PC Builds
 else ifeq ($(PLATFORM), PC)
 $(DEBUG)/source/logger/logger.o : $(SOURCE)/logger/logger.c
-	@echo 'Building file: $<'
-	$(PC_CC) $(PC_FLAGS) $(PC_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
+    @echo 'Building file: $<'
+    $(PC_CC) $(PC_FLAGS) $(PC_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
 
 $(DEBUG)/source/mem_test/%.o : $(SOURCE)/mem_test/%.c
-	@echo 'Building file: $<'
-	$(PC_CC) $(PC_FLAGS) $(PC_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
-	
+    @echo 'Building file: $<'
+    $(PC_CC) $(PC_FLAGS) $(PC_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
+
 $(DEBUG)/source/pattern_gen/%.o : $(SOURCE)/pattern_gen/%.c
-	@echo 'Building file: $<'
-	$(PC_CC) $(PC_FLAGS) $(PC_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
+    @echo 'Building file: $<'
+    $(PC_CC) $(PC_FLAGS) $(PC_INCS) -MMD -MP -MF"./$(@:%.o=%.d)" -MT"./$(@:%.o=%.o)" -MT"./$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
 endif
 
 #####################################################################
 # Making directories
 .PHONY : directories
 directories :
-	$(MK) \
-	$(DEBUG) \
-	$(DEBUG)/board \
-	$(DEBUG)/CMSIS \
-	$(DEBUG)/drivers \
-	$(DEBUG)/startup \
-	$(DEBUG)/utilities \
-	$(DEBUG)/ucunit \
-	$(DEBUG)/source/led_control \
-	$(DEBUG)/source/logger \
-	$(DEBUG)/source/mem_test \
-	$(DEBUG)/source/pattern_gen \
-	$(DEBUG)/source/unit_tests
-	
+    $(MK) \
+    $(DEBUG) \
+    $(DEBUG)/board \
+    $(DEBUG)/CMSIS \
+    $(DEBUG)/drivers \
+    $(DEBUG)/startup \
+    $(DEBUG)/utilities \
+    $(DEBUG)/ucunit \
+    $(DEBUG)/source/led_control \
+    $(DEBUG)/source/logger \
+    $(DEBUG)/source/mem_test \
+    $(DEBUG)/source/pattern_gen \
+    $(DEBUG)/source/unit_tests
+
 # Clean target
 clean:
-	@$(RM) \
-	$(DEBUG)/board \
-	$(DEBUG)/CMSIS \
-	$(DEBUG)/drivers \
-	$(DEBUG)/startup \
-	$(DEBUG)/utilities \
-	$(DEBUG)/source \
-	$(DEBUG)/pes_project_3.axf \
-	$(DEBUG)/pes_project_3.map
-	@echo "Build cleaned"	
+    @$(RM) \
+    $(DEBUG)/board \
+    $(DEBUG)/CMSIS \
+    $(DEBUG)/drivers \
+    $(DEBUG)/startup \
+    $(DEBUG)/utilities \
+    $(DEBUG)/source \
+    $(DEBUG)/pes_project_3.axf \
+    $(DEBUG)/pes_project_3.map
+    @echo "Build cleaned"    
 ```
 
 ---
@@ -475,23 +475,23 @@ clean:
 
 ```c
 /**
-  * File Name         - main.c
-  * Description     - contains main program sequence
-  * Author            - Atharva Nandanwar
-  * Tools            - GNU C Compiler / ARM Compiler Toolchain
-  * Leveraged Code     -
-  * URL                -
+  * File Name 		- main.c
+  * Description 	- contains main program sequence
+  * Author			- Atharva Nandanwar
+  * Tools			- GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code 	-
+  * URL				-
   */
 
 #include "main.h"
 
 // Global Data types
 logger logger_1 = {
-        0,
-        NULL,
-        0,
-        NULL,
-        0,
+		0,
+		NULL,
+		0,
+		NULL,
+		0,
 };
 logger* logger_instance = &logger_1;
 ARCH_SIZE buffer_address[16];
@@ -509,198 +509,276 @@ int main(void)
 {
 // Board pins and peripherals initialization - KL25Z only
 #if defined(KL25Z) || defined(KL25Z_LOG)
-    init();
+	init();
 #endif
 
 // Logger control
 #if defined(KL25Z_LOG) || defined(PC_LOG)
-    logger_enable();
+	logger_enable();
 #else
-    logger_disable();
+	logger_disable();
 #endif
 
-    uint32_t* base = NULL;
-    ARCH_SIZE* address = NULL;
-    size_t length = 16;
-    int8_t seed = 74;
-    uint8_t test_status = SUCCESS;
-    volatile uint8_t status;
+	uint32_t* base = NULL;
+	ARCH_SIZE* address = NULL;
+	size_t length = 16;
+	int8_t seed = 74;
+	uint8_t test_status = SUCCESS;
+	volatile uint8_t status;
 
-    // Starting the tests
-    Turn_On_Only_LED(BLUE);
-    // Memory allocation
-    base = allocate_words(length);
+	// Starting the tests--------------------------------------------
+	Turn_On_Only_LED(BLUE);
+	// Memory allocation---------------------------------------------
+	base = allocate_words(length);
+	if(base == NULL)
+	{
+		logger_instance->string = "Failed to allocate memory";
+		log_string();
+		test_status++;
+	}
+	else
+	{
+		logger_instance->string = "Successful memory allocation";
+		log_string();
 
-    // Writing pattern into allocated memory
-    status = write_pattern(base, length, seed);
-    if(status == SUCCESS)
-    {
-        // Display the pattern
-        logger_instance->data = (ARCH_SIZE*) display_memory(base, 16);
-        logger_instance->length = 16;
-        log_data();
-    }
-    else
-    {
-        logger_instance->string = "Failed to write";
-        log_string();
-        test_status++;
-    }
+	}
+	base = (void*) 0;
 
-    // Verifying the pattern
-    address = verify_pattern(base, length, seed);
-    if(address[0] == 0)
-    {
-        logger_instance->string = "Verifying Pattern - Successful verification";
-        log_string();
-    }
-    else
-    {
-        logger_instance->string = "Verifying Pattern - Failure to verify";
-        log_string();
-        logger_instance->data = address;
-        logger_instance->length = get_length(address, 16);
-        log_address();
-        test_status++;
-    }
 
-    // Write 0xFFEE into a memory region
-    write_memory(get_address(base, 7), 0xEE);
-    write_memory(get_address(base, 8), 0xFF);
-    logger_instance->string = "Writing 0xFFEE to a memory location";
-    log_string();
+	// Writing pattern into allocated memory-------------------------
+	status = write_pattern(base, length, seed);
+	if(status == SUCCESS)
+	{
+		// Display the pattern
+		logger_instance->data = (ARCH_SIZE*) display_memory(base, 16);
+		logger_instance->length = 16;
+		log_data();
+	}
+	else
+	{
+		logger_instance->string = "Failed to write";
+		log_string();
+		test_status++;
+	}
 
-    // Display the pattern
-    logger_instance->data = (ARCH_SIZE*) display_memory(get_address(base, 7), 2);
-    logger_instance->length = 2;
-    log_data();
+	// Verifying the pattern-----------------------------------------
+	address = verify_pattern(base, length, seed);
+	if(address != NULL)
+	{
+		if(address[0] == 0) // Verification successful
+		{
+			logger_instance->string = "Verifying Pattern - Successful verification";
+			log_string();
+		}
+		else
+		{
+			logger_instance->string = "Verifying Pattern - Failure to verify";
+			log_string();
+			logger_instance->data = address;
+			logger_instance->length = get_length(address, length);
+			log_address();
+			test_status++; //Since the verify pattern is supposed to fail
+		}
+	}
+	else
+	{
+		logger_instance->string = "Failed - Passed NULL";
+		log_string();
+		test_status++; //Since NULL means failure
+	}
 
-    // Verify the pattern
-    address = verify_pattern(base, length, seed);
-    if(address[0] == 0)
-    {
-        logger_instance->string = "Verifying Pattern - Successful verification";
-        log_string();
-        test_status++;    // Since the test is supposed to fail
-    }
-    else
-    {
-        logger_instance->string = "Verifying Pattern - Failure to verify";
-        log_string();
-        logger_instance->data = address;
-        logger_instance->length = get_length(address, length);
-        log_address();
-    }
+	// Write 0xEE into a memory region-------------------------------
+	if(write_memory(get_address(base, 7), 0xEE))
+	{
+		logger_instance->string = "Failed to write at memory location";
+		log_string();
+	}
+	else
+	{
+		logger_instance->string = "Failed to write at memory location";
+		log_string();
+	}
+	// Write 0xFF into a memory region-------------------------------
+	if(write_memory(get_address(base, 8), 0xFF))
+	{
+		logger_instance->string = "Failed to write at memory location";
+		log_string();
+	}
+	else
+	{
+		logger_instance->string = "Failed to write at memory location";
+		log_string();
+	}
 
-    // Write the pattern
-    status = write_pattern(base, length, seed);
-    if(status == SUCCESS)
-    {
-        // Displaying the pattern
-        logger_instance->data = (ARCH_SIZE*) display_memory(base, 16);
-        logger_instance->length = 16;
-        log_data();
-    }
-    else
-    {
-        logger_instance->string = "Failed to write";
-        log_string();
-        test_status++;
-    }
 
-    // Verifying the pattern
-    address = verify_pattern(base, length, seed);
-    if(address[0] == 0)
-    {
-        logger_instance->string = "Verifying Pattern - Successful verification";
-        log_string();
-    }
-    else
-    {
-        logger_instance->string = "Verifying Pattern - Failure to verify";
-        log_string();
-        logger_instance->data = address;
-        logger_instance->length = get_length(address, length);
-        log_address();
-        test_status++;
-    }
+	// Display the pattern-------------------------------------------
+	logger_instance->data = (ARCH_SIZE*) display_memory(get_address(base, 7), 2);
+	logger_instance->length = 2;
+	log_data();
 
-    // Invert a block of memory
-    status = invert_block(get_address(base, 9), 4);
-    if(status == SUCCESS)
-    {
-        // Display the pattern
-        logger_instance->data = (ARCH_SIZE*) display_memory(get_address(base, 9), 16);
-        logger_instance->length = 4;
-        log_data();
-    }
-    else
-    {
-        logger_instance->string = "Failed to invert";
-        log_string();
-        test_status++;
-    }
+	// Verifying the pattern-----------------------------------------
+	address = verify_pattern(base, length, seed);
+	if(address != NULL)
+	{
+		if(address[0] == 0) // Verification successful
+		{
+			logger_instance->string = "Verifying Pattern - Successful verification";
+			log_string();
+			test_status++; //Since the verify pattern is supposed to fail
+		}
+		else
+		{
+			logger_instance->string = "Verifying Pattern - Failure to verify";
+			log_string();
+			logger_instance->data = address;
+			logger_instance->length = get_length(address, length);
+			log_address();
+		}
+	}
+	else
+	{
+		logger_instance->string = "Verify Failed - Passed NULL";
+		log_string();
+		test_status++;
+	}
 
-    // Verifying the pattern
-    address = verify_pattern(base, length, seed);
-    if(address[0] == 0)
-    {
-        logger_instance->string = "Verifying Pattern - Successful verification";
-        log_string();
-        test_status++; //Since the verify pattern is supposed to fail
-    }
-    else
-    {
-        logger_instance->string = "Verifying Pattern - Failure to verify";
-        log_string();
-        logger_instance->data = address;
-        logger_instance->length = get_length(address, length);
-        log_address();
-    }
+	// Write the pattern---------------------------------------------
+	status = write_pattern(base, length, seed);
+	if(status == SUCCESS)
+	{
+		// Displaying the pattern
+		logger_instance->data = (ARCH_SIZE*) display_memory(base, 16);
+		logger_instance->length = 16;
+		log_data();
+	}
+	else
+	{
+		logger_instance->string = "Failed to write";
+		log_string();
+		test_status++;
+	}
 
-    // Inverting a block of memory
-    status = invert_block(get_address(base, 9), 4);
-    if(status == SUCCESS)
-    {
-        logger_instance->data = (ARCH_SIZE*) display_memory(get_address(base, 9), 16);
-        logger_instance->length = 4;
-        log_data();
-    }
-    else
-    {
-        logger_instance->string = "Failed to invert";
-        log_string();
-        test_status++;
-    }
+	// Verifying the pattern-----------------------------------------
+	address = verify_pattern(base, length, seed);
+	if(address != NULL)
+	{
+		if(address[0] == 0) // Verification successful
+		{
+			logger_instance->string = "Verifying Pattern - Successful verification";
+			log_string();
+		}
+		else
+		{
+			logger_instance->string = "Verifying Pattern - Failure to verify";
+			log_string();
+			logger_instance->data = address;
+			logger_instance->length = get_length(address, length);
+			log_address();
+			test_status++; //Since the verify pattern is supposed to fail
+		}
+	}
+	else
+	{
+		logger_instance->string = "Failed - Passed NULL";
+		log_string();
+		test_status++;
+	}
 
-    // Verifying the pattern
-    address = verify_pattern(base, length, seed);
-    if(address[0] == 0)
-    {
-        logger_instance->string = "Verifying Pattern - Successful verification";
-        log_string();
-    }
-    else
-    {
-        logger_instance->string = "Verifying Pattern - Failure to verify";
-        log_string();
-        logger_instance->data = address;
-        logger_instance->length = get_length(address, length);
-        log_address();
-        test_status++;
-    }
+	// Invert a block of memory--------------------------------------
+	status = invert_block(get_address(base, 9), 4);
+	if(status == SUCCESS)
+	{
+		// Display the pattern
+		logger_instance->data = (ARCH_SIZE*) display_memory(get_address(base, 9), 16);
+		logger_instance->length = 4;
+		log_data();
+	}
+	else
+	{
+		logger_instance->string = "Failed to invert";
+		log_string();
+		test_status++;
+	}
 
-    // LED Test Status
-    delay();
-    if (test_status == SUCCESS)
-    {
-        Turn_On_Only_LED(GREEN);
-    }
-    else
-    {
-        Turn_On_Only_LED(RED);
-    }
-    free_words(base);
+	// Verifying the pattern-----------------------------------------
+	address = verify_pattern(base, length, seed);
+	if(address != NULL)
+	{
+		if(address[0] == 0) // Verification successful
+		{
+			logger_instance->string = "Verifying Pattern - Successful verification";
+			log_string();
+			test_status++; //Since the verify pattern is supposed to fail
+		}
+		else
+		{
+			logger_instance->string = "Verifying Pattern - Failure to verify";
+			log_string();
+			logger_instance->data = address;
+			logger_instance->length = get_length(address, length);
+			log_address();
+		}
+	}
+	else
+	{
+		logger_instance->string = "Failed - Passed NULL";
+		log_string();
+		test_status++;
+	}
+
+
+	// Inverting a block of memory-----------------------------------
+	status = invert_block(get_address(base, 9), 4);
+	if(status == SUCCESS)
+	{
+		logger_instance->data = (ARCH_SIZE*) display_memory(get_address(base, 9), 16);
+		logger_instance->length = 4;
+		log_data();
+	}
+	else
+	{
+		logger_instance->string = "Failed to invert";
+		log_string();
+		test_status++;
+	}
+
+	// Verifying the pattern-----------------------------------------
+	address = verify_pattern(base, length, seed);
+	if(address != NULL)
+	{
+		if(address[0] == 0) // Verification successful
+		{
+			logger_instance->string = "Verifying Pattern - Successful verification";
+			log_string();
+		}
+		else
+		{
+			logger_instance->string = "Verifying Pattern - Failure to verify";
+			log_string();
+			logger_instance->data = address;
+			logger_instance->length = get_length(address, length);
+			log_address();
+			test_status++; //Since the verify pattern is supposed to fail
+		}
+	}
+	else
+	{
+		logger_instance->string = "Failed - Passed NULL";
+		log_string();
+		test_status++;
+	}
+
+	// LED Test Status-----------------------------------------------
+	delay();
+	if (test_status == SUCCESS)
+	{
+		Turn_On_Only_LED(GREEN);
+	}
+	else
+	{
+		Turn_On_Only_LED(RED);
+	}
+	free_words(base);
     return 0;
 }
 
@@ -709,37 +787,38 @@ int main(void)
 // To determine how many defunct addresses are present
 uint8_t get_length(ARCH_SIZE* address, uint8_t length_of_array)
 {
-    uint8_t length = 0;
-    for (uint8_t i = 0; i < length_of_array; i++)
-    {
-        if (*(address + i) != 0)
-            length++;
-    }
-    return length;
+	uint8_t length = 0;
+	for (uint8_t i = 0; i < length_of_array; i++)
+	{
+		if (*(address + i) != 0)
+			length++;
+	}
+	return length;
 }
 
 // Just some minor delay
 void delay(void)
 {
-    volatile uint32_t i = 2300 * 3000;
-    while(i != 0)
-    {
-        i--;
-        __asm volatile ("nop");
-    }
+	volatile uint32_t i = 2300 * 3000;
+	while(i != 0)
+	{
+		i--;
+		__asm volatile ("nop");
+	}
 }
 
 #if defined(KL25Z) || defined(KL25Z_LOG)
 void init(void)
 {
-    /* Init board hardware. */
-    BOARD_InitBootPins();
-    BOARD_InitBootClocks();
-    BOARD_InitBootPeripherals();
-    /* Init FSL debug console. */
-    BOARD_InitDebugConsole();
+	/* Init board hardware. */
+	BOARD_InitBootPins();
+	BOARD_InitBootClocks();
+	BOARD_InitBootPeripherals();
+	/* Init FSL debug console. */
+	BOARD_InitDebugConsole();
 }
 #endif
+
 ```
 
 ---
@@ -747,39 +826,7 @@ void init(void)
 **main.h**
 
 ```c
-/**
-  * File Name         - main.h
-  * Description     - header file for main.c
-  * Author            - Atharva Nandanwar
-  * Tools            - GNU C Compiler / ARM Compiler Toolchain
-  * Leveraged Code     -
-  * URL                -
-  */
 
-
-#ifndef MAIN_H_
-#define MAIN_H_
-#include <stdlib.h>
-#include "common.h"
-#if defined(KL25Z) || defined(KL25Z_LOG)
-#include "board.h"
-#include "peripherals.h"
-#include "pin_mux.h"
-#include "clock_config.h"
-#include "MKL25Z4.h"
-#include "fsl_debug_console.h"
-#endif
-#include "mem_test/allocate.h"
-#include "mem_test/free.h"
-#include "mem_test/pattern_write.h"
-#include "mem_test/mem_write.h"
-#include "mem_test/verify.h"
-#include "mem_test/display.h"
-#include "mem_test/get_addr.h"
-#include "mem_test/invert.h"
-#include "logger/logger.h"
-#include "led_control/led_control.h"
-#endif /* MAIN_H_ */
 ```
 
 ---
@@ -1095,12 +1142,12 @@ uint8_t * display_memory(uint32_t *loc, size_t length)
 
 ```c
 /**
-  * File Name 		- display.h
-  * Description 	- Header file for display.c
-  * Author			- Atharva Nandanwar
-  * Tools			- GNU C Compiler / ARM Compiler Toolchain
-  * Leveraged Code 	-
-  * URL				-
+  * File Name         - display.h
+  * Description     - Header file for display.c
+  * Author            - Atharva Nandanwar
+  * Tools            - GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code     -
+  * URL                -
   */
 
 #ifndef MEM_TEST_DISPLAY_H_
@@ -1117,21 +1164,20 @@ uint8_t * display_memory(uint32_t *loc, size_t length);
 
 ```c
 /**
-  * File Name 		- free.c
-  * Description 	- header file for free.c
-  * Author			- Atharva Nandanwar
-  * Tools			- GNU C Compiler / ARM Compiler Toolchain
-  * Leveraged Code 	-
-  * URL				-
+  * File Name         - free.c
+  * Description     - header file for free.c
+  * Author            - Atharva Nandanwar
+  * Tools            - GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code     -
+  * URL                -
   */
 
 #include "free.h"
 
 void free_words(uint32_t* src)
 {
-	free(src);
+    free(src);
 }
-
 ```
 
 ---
@@ -1140,12 +1186,12 @@ void free_words(uint32_t* src)
 
 ```c
 /**
-  * File Name 		- free.h
-  * Description 	- contains free_words functions which frees memory
-  * Author			- Atharva Nandanwar
-  * Tools			- GNU C Compiler / ARM Compiler Toolchain
-  * Leveraged Code 	-
-  * URL				-
+  * File Name         - free.h
+  * Description     - contains free_words functions which frees memory
+  * Author            - Atharva Nandanwar
+  * Tools            - GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code     -
+  * URL                -
   */
 
 #ifndef MEM_TEST_FREE_H_
@@ -1174,10 +1220,17 @@ void free_words(uint32_t* src);
 
 uint32_t* get_address(uint32_t* base, uint16_t offset)
 {
-	// uint8 because we want to increment by one byte
-    uint8_t* temp = (uint8_t*) base;
-    base = (uint32_t*)(temp + offset);
-    return base;
+	if(base == NULL)
+	{
+		return NULL;
+	}
+	else
+	{
+		// uint8 because we want to increment by one byte
+		uint8_t* temp = (uint8_t*) base;
+		base = (uint32_t*)(temp + offset);
+		return base;
+	}
 }
 ```
 
@@ -1198,9 +1251,9 @@ uint32_t* get_address(uint32_t* base, uint16_t offset)
 #ifndef MEM_TEST_GET_ADDR_H_
 #define MEM_TEST_GET_ADDR_H_
 #include <stdint.h>
+#include <stdlib.h>
 uint32_t* get_address(uint32_t* base, uint16_t offset);
 #endif /* MEM_TEST_GET_ADDR_H_ */
-
 ```
 
 ---
@@ -1313,7 +1366,6 @@ mem_status write_memory(uint32_t* loc, uint8_t value)
 #include "../common.h"
 mem_status write_memory(uint32_t* loc, uint8_t value);
 #endif /* MEM_TEST_MEM_WRITE_H_ */
-
 ```
 
 ---
@@ -1322,28 +1374,27 @@ mem_status write_memory(uint32_t* loc, uint8_t value);
 
 ```c
 /**
-  * File Name 		- pattern_write.c
-  * Description 	- contains function which writes pattern from
-  * 				  pattern generator into memory block
-  * Author			- Atharva Nandanwar
-  * Tools			- GNU C Compiler / ARM Compiler Toolchain
-  * Leveraged Code 	-
-  * URL				-
+  * File Name         - pattern_write.c
+  * Description     - contains function which writes pattern from
+  *                   pattern generator into memory block
+  * Author            - Atharva Nandanwar
+  * Tools            - GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code     -
+  * URL                -
   */
 
 #include "pattern_write.h"
 
 mem_status write_pattern(uint32_t * loc, size_t length, int8_t seed)
 {
-	if(loc == NULL)
-	{
-		return FAIL;
-	}
-	uint8_t* byte_array = (uint8_t *) loc;
-	pattern_generator(byte_array, length, seed);
-	return SUCCESS;
+    if(loc == NULL)
+    {
+        return FAIL;
+    }
+    uint8_t* byte_array = (uint8_t *) loc;
+    pattern_generator(byte_array, length, seed);
+    return SUCCESS;
 }
-
 ```
 
 ---
@@ -1352,12 +1403,12 @@ mem_status write_pattern(uint32_t * loc, size_t length, int8_t seed)
 
 ```c
 /**
-  * File Name 		- pattern_write.h
-  * Description 	- header file for pattern_write.c
-  * Author			- Atharva Nandanwar
-  * Tools			- GNU C Compiler / ARM Compiler Toolchain
-  * Leveraged Code 	-
-  * URL				-
+  * File Name         - pattern_write.h
+  * Description     - header file for pattern_write.c
+  * Author            - Atharva Nandanwar
+  * Tools            - GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code     -
+  * URL                -
   */
 
 #ifndef MEM_TEST_PATTERN_WRITE_H_
@@ -1368,7 +1419,6 @@ mem_status write_pattern(uint32_t * loc, size_t length, int8_t seed)
 #include "pattern_gen/pattern_gen.h"
 mem_status write_pattern(uint32_t * loc, size_t length, int8_t seed);
 #endif /* MEM_TEST_PATTERN_WRITE_H_ */
-
 ```
 
 ---
@@ -1386,6 +1436,7 @@ mem_status write_pattern(uint32_t * loc, size_t length, int8_t seed);
   * URL				-
   */
 #include "verify.h"
+
 ARCH_SIZE * verify_pattern(uint32_t * loc, size_t length, int8_t seed)
 {
 	// For byte wise operations
@@ -1397,32 +1448,38 @@ ARCH_SIZE * verify_pattern(uint32_t * loc, size_t length, int8_t seed)
 	pattern_generator(pattern_holder, length, seed);
 	// i for looping through the length of pattern,
 	// j for storing defunct addresses if any
-	volatile uint8_t i, j = 0;
-	for (i = 0; i < length; i++)
+	if(loc != NULL)
 	{
-		// If pattern matches
-		if (*(temp + i) == pattern_holder[i])
-		{
-			continue;
-		}
-		// If pattern doesn't match
-		else if (*(temp + i) != pattern_holder[i])
-		{
-			*(buffer_address + j) = (ARCH_SIZE) (temp + i);
-			j++;
-		}
-	}
-	// If verify pattern sucessful, empty buffer for extra
-	// precautions
-	if(j == 0)
-	{
+		volatile uint8_t i, j = 0;
 		for (i = 0; i < length; i++)
 		{
-			buffer_address[i] = 0;
+			// If pattern matches
+			if (*(temp + i) == pattern_holder[i])
+			{
+				continue;
+			}
+			// If pattern doesn't match
+			else if (*(temp + i) != pattern_holder[i])
+			{
+				*(buffer_address + j) = (ARCH_SIZE) (temp + i);
+				j++;
+			}
 		}
+		// If verify pattern sucessful, empty buffer for extra
+		// precautions
+		if(j == 0)
+		{
+			for (i = 0; i < length; i++)
+			{
+				buffer_address[i] = 0;
+			}
+		}
+		return buffer_address;
 	}
-
-	return buffer_address;
+	else
+	{
+		return NULL;
+	}
 }
 
 ```
@@ -1459,12 +1516,12 @@ ARCH_SIZE * verify_pattern(uint32_t * loc, size_t length, int8_t seed);
 
 ```c
 /**
-  * File Name 		- pattern_gen.c
-  * Description 	- contains function generating pattern from a seed
-  * Author			- Atharva Nandanwar
-  * Tools			- GNU C Compiler / ARM Compiler Toolchain
-  * Leveraged Code 	-
-  * URL				-
+  * File Name         - pattern_gen.c
+  * Description     - contains function generating pattern from a seed
+  * Author            - Atharva Nandanwar
+  * Tools            - GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code     -
+  * URL                -
   */
 
 
@@ -1472,26 +1529,25 @@ ARCH_SIZE * verify_pattern(uint32_t * loc, size_t length, int8_t seed);
 
 void pattern_generator(uint8_t *pattern, uint8_t length, int8_t seed)
 {
-	volatile uint8_t i, j;
-	// Random lookup table for calculations
-	uint8_t lookup[15] = {17, 2, 32, 66, 1, 99, 30, 23, 53, 6, 14, 67, 59, 89, 48};
-	uint8_t temporary[length];
-	for (i = 0, j = 0; i < length; i++, j++)
-	{
-		// Random function to calculate random values
-		temporary[i] = seed * seed + lookup[j] + (i % 13);
-		// Lookup table operated circularly
-		if (j == 14)
-		{
-			j = 0;
-		}
-	}
-	for (i = 0; i < length; i++)
-	{
-		*(pattern + i) = temporary[i];
-	}
+    volatile uint8_t i, j;
+    // Random lookup table for calculations
+    uint8_t lookup[15] = {17, 2, 32, 66, 1, 99, 30, 23, 53, 6, 14, 67, 59, 89, 48};
+    uint8_t temporary[length];
+    for (i = 0, j = 0; i < length; i++, j++)
+    {
+        // Random function to calculate random values
+        temporary[i] = seed * seed + lookup[j] + (i % 13);
+        // Lookup table operated circularly
+        if (j == 14)
+        {
+            j = 0;
+        }
+    }
+    for (i = 0; i < length; i++)
+    {
+        *(pattern + i) = temporary[i];
+    }
 }
-
 ```
 
 ---
@@ -1500,12 +1556,12 @@ void pattern_generator(uint8_t *pattern, uint8_t length, int8_t seed)
 
 ```c
 /**
-  * File Name 		- pattern_gen.h
-  * Description 	- header file for pattern_gen.c
-  * Author			- Atharva Nandanwar
-  * Tools			- GNU C Compiler / ARM Compiler Toolchain
-  * Leveraged Code 	-
-  * URL				-
+  * File Name         - pattern_gen.h
+  * Description     - header file for pattern_gen.c
+  * Author            - Atharva Nandanwar
+  * Tools            - GNU C Compiler / ARM Compiler Toolchain
+  * Leveraged Code     -
+  * URL                -
   */
 
 
@@ -1514,7 +1570,4 @@ void pattern_generator(uint8_t *pattern, uint8_t length, int8_t seed)
 #include <stdint.h>
 void pattern_generator(uint8_t *pattern, uint8_t length, int8_t seed);
 #endif /* PATTERN_GEN_H_ */
-
 ```
-
-
