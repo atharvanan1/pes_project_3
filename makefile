@@ -87,9 +87,7 @@ PC_INCS := \
 		   -I"$(SOURCE)/logger" \
 		   -I"$(SOURCE)/mem_test" \
 		   -I"$(SOURCE)/pattern_gen" \
-		   -I"$(SOURCE)/unit_tests" \
-		   -I"ucunit"
-		    
+		   
 # PC Object Files
 PC_OBJS := \
 		   $(DEBUG)/source/logger/logger.o \
@@ -123,13 +121,11 @@ ARM_INCS := \
 		   -I"$(SOURCE)/logger" \
 		   -I"$(SOURCE)/mem_test" \
 		   -I"$(SOURCE)/pattern_gen" \
-		   -I"$(SOURCE)/unit_tests" \
 		   -I"board" \
 		   -I"CMSIS" \
 		   -I"drivers" \
 		   -I"startup" \
 		   -I"utilities" \
-		   -I"ucunit"
 		   
 # ARM Object Files 
 ARM_OBJS := \
@@ -236,11 +232,10 @@ kl25z_log : directories $(ARM_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_c
 
 #####################################################################
 # Rule for making PC target without logging	
-pc : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c $(SOURCE)/mem_test/verify.c
+pc : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/main.c -o $(DEBUG)/source/main.o
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
-	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC $(SOURCE)/mem_test/verify.c -o $(DEBUG)/source/mem_test/verify.o
-	@$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/mem_test/verify.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
+	@$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
 	@echo "PC without logging made"
 	
 #####################################################################
@@ -248,8 +243,7 @@ pc : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
 pc_log : directories $(PC_OBJS) $(SOURCE)/main.c $(SOURCE)/led_control/led_control.c
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/main.c -o $(DEBUG)/source/main.o
 	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/led_control/led_control.c -o $(DEBUG)/source/led_control/led_control.o
-	@$(PC_CC) $(PC_FLAGS) $(PC_INCS) -DPC_LOG $(SOURCE)/mem_test/verify.c -o $(DEBUG)/source/mem_test/verify.o
-	@$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/mem_test/verify.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
+	@$(PC_LL) $(DEBUG)/source/main.o $(DEBUG)/source/led_control/led_control.o $(PC_OBJS) -o $(EXE)
 	@echo "PC with logging made"
 
 #####################################################################

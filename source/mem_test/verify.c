@@ -8,6 +8,7 @@
   * URL				-
   */
 #include "verify.h"
+
 ARCH_SIZE * verify_pattern(uint32_t * loc, size_t length, int8_t seed)
 {
 	// For byte wise operations
